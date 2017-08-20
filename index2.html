@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title>SHC navigator</title>
+    <style type="text/css">
+        body {
+            padding-top: 50px;
+            padding-left: 30px;
+        }
+        
+        #chartArea {
+            width: 950px;
+            height: 491px;
+            background-color: #CCC;
+        }
+        
+        .room {
+            display: inline-block;
+            margin-right: 2px;
+            fill: white;
+            stroke: teal;
+            stroke-weight: 1px;
+        }
+        
+        .room-selected {
+            display: inline-block;
+            margin-right: 2px;
+            fill: teal;
+            stroke: teal;
+            stroke-weight: 1px;
+        }
+        
+        .bubble {
+            display: inline-block;
+            fill: purple;
+            fill-opacity: 0.5;
+            stroke: black;
+            stroke-weight: 1px;
+        }
+    </style>
+    <script src="lib/jquery.min.js" type="text/javascript"></script>
+    <script src="lib/d3.min.js" type="text/javascript"></script>
+    <script src="lib/underscore-min.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div id="chartArea"></div>
+    <script src="app/js/shc_floorplan.js" type="text/javascript"></script>
+</body>
+
+</html>
