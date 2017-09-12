@@ -1,18 +1,28 @@
 {
-  "name": "shc_navigator",
-  "version": "1.0.0",
-  "description": "shc navigator",
-  "main": "index.html",
-  "dependencies": {
-    "gulp": "^3.9.1"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-connect": "^5.0.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+	"name": "shc_navigator",
+	"version": "1.0.0",
+	"description": "shc navigator",
+	"main": "index.html",
+	"dependencies": {
+		"gulp": "^3.9.1",
+		"p5": "0.5.14",
+		"jquery": "3.2.1",
+		"d3": "4.10.2",
+		"bootstrap": "3.3.7",
+		"underscore": "1.8.3",
+		"font-awesome": "4.7.0"
+	},
+	"devDependencies": {
+		"gulp": "^3.9.1",
+		"gulp-connect": "^5.0.0",
+		"gulp-webserver": "0.9.1",
+		"gulp-sass": "3.1.0",
+		"gulp-plumber": "1.1.0",
+		"opn": "^5.1.0"
+	},
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "ISC"
 }

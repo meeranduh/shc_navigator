@@ -1,10 +1,6 @@
 var gulp = require('gulp'),
   connect = require('gulp-connect');
  
-//gulp.task('webserver', function() {
-//  connect.server();
-//});
-
 var webserver = require('gulp-webserver');
 
 var server = {
