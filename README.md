@@ -2,6 +2,10 @@
 
 # A webapp to show floor plan for SHC.
 
+Install node.js / npm
+https://www.npmjs.com/get-npm
+
+
 Install rimraf
 > npm install rimraf
 
