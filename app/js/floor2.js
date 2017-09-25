@@ -1,132 +1,70 @@
-function setup(){
-	createCanvas(491, 191);
+rooms = [];
+rooms.push(createRoom(0, 90, 70, 100, "207", "#4CAF50", 25, "#000000" ));
+rooms.push(createRoom(70, 90, 70, 100, "206", "#4CAF50", 25, "#000000" ));
+rooms.push(createRoom(140, 90, 70, 100, "205", "#4CAF50", 25, "#000000" ));
+rooms.push(createRoom(210, 90, 70, 100, "204", "#4CAF50", 25, "#000000" ));
+rooms.push(createRoom(280, 90, 70, 100, "203", "#4CAF50", 25, "#000000" ));
+rooms.push(createRoom(350, 90, 70, 100, "202", "#4CAF50", 25, "#000000" ));
+rooms.push(createRoom(420, 90, 70, 100, "201", "#4CAF50", 25, "#000000" ));
+rooms.push(createRoom(70, 0, 110, 60, "208", "#4CAF50", 25, "#000000" ));
+rooms.push(createRoom(180, 0, 90, 60, "209", "#4CAF50", 25, "#000000" ));
+rooms.push(createRoom(270, 40, 60, 20, "", "#4CAF50", 25, "#000000" ));
+
+rooms.push(createRoom(40, 0, 30, 60, "", "#33691E", 25, "#000000" ));
+rooms.push(createRoom(270, 0, 30, 40, "", "#33691E", 25, "#000000" ));
+rooms.push(createRoom(300, 0, 50, 40, "", "#33691E", 25, "#000000" ));
+rooms.push(createRoom(320, 40, 30, 20, "", "#33691E", 25, "#000000" ));
+
+rooms.push(createRoom(350, 0, 35, 70, "male_rm", "#558B2F", 15, "#ffffff"));
+rooms.push(createRoom(385, 0, 35, 70, "female_rm", "#558B2F", 15, "#ffffff"));
+
+rooms.push(createRoom(420, 40, 25, 20, "e", "#B2FF59", 15, "#000000"));
+rooms.push(createRoom(445, 40, 25, 20, "e", "#B2FF59", 15, "#000000"));
+
+var stairs = [];
+stairs.push(new Stair(0, 0, 40, 50, 0, 1, 'horizontal', 5, "#969696", "#F1F8E9"));
+stairs.push(new Stair(420, 0, 50, 40, 1, 3, 'vertical', 5, "#969696", "#F1F8E9"));
+
+var images = {};
+
+function createRoom(x, y, w, h, number, color, tsize, tcolor) {
+	var coords = [];
+	coords.push({ x: x, y: y });
+	coords.push({ x: x + w, y: y });
+	coords.push({ x: x + w, y: y + h });
+	coords.push({ x: x, y: y + h });
+	
+	return new Room(coords, number, color, tsize, tcolor);
 }
 
-var roomnumber = [{x: 435, y: 155}, {x1: 365, y1: 155}, {x2: 295, y2: 155}, {x3: 225, y3: 155}, {x4: 155, y4: 155}, {x5: 85, y5: 155}, {x6: 15, y6: 155}, {x7: 105, y7: 45}, {x8: 215, y8: 45}];
-var rooms = [{x: 0, y: 90}, {x: 70, y: 90}, {x: 140, y: 90}, {x: 210, y: 90}, {x: 280, y: 90}, {x: 350, y: 90}, {x: 420, y: 90}];
-var rooms2 = [{x: 70, y: 0}];
-var rooms3 = [{x: 180, y:0}];
-var sideroom = [{x: 40, y:0}];
-var sideroom2 = [{x: 270, y:0}];
-var sideroom3 = [{x: 300, y:0}];
-var sideroom4 = [{x: 320, y:40}];
-var bathrooms = [{x: 350, y: 0}, {x: 385, y: 0}];
-var bathroomlabel = [{x1: 350, y1:32}, {x: 355, y: 45}];
-var stairs = [{x: 0, y: 0}, {x: 20, y: 0}, {x1: 0, y1: 30, x2: 20, y2: 30}, {x1: 0, y1: 35, x2: 20, y2: 35}, {x1: 0, y1: 40, x2: 20, y2: 40},{x1: 0, y1: 45, x2: 20, y2: 45},{x1: 20, y1: 30, x2: 40, y2: 30}, {x1: 20, y1: 35, x2: 40, y2: 35}, {x1: 20, y1: 40, x2: 40, y2: 40}, {x1: 20, y1: 45, x2: 40, y2: 45}];
-var stairss = [{x: 420 , y: 0}, {x1: 450, y1: 0, x2: 450, y2: 20}, {x1: 455, y1: 0, x2: 455, y2: 20}, {x1: 460, y1: 0, x2: 460, y2: 20}, {x1: 465, y1: 0, x2: 465, y2: 20}, {x: 420 , y: 20}, {x1: 450, y1: 20, x2: 450, y2: 40}, {x1: 455, y1: 20, x2: 455, y2: 40}, {x1: 460, y1: 20, x2: 460, y2: 40}, {x1: 465, y1: 20, x2: 465, y2: 40}];
-var elevator = [{x: 420, y: 40}, {x: 445, y: 40}];
+function preload() {
+    images['male_rm'] = loadImage("assets/male.png");
+    images['female_rm'] = loadImage("assets/female.png");
+}
 
-function draw(){
-	background(50, 150, 50);
-	fill(200, 200, 200);
-	rooms.forEach( function (point){
-		var x = point.x;
-		var y = point.y;
-		rect(x, y, 70, 100);	
-	}); 
-	rooms2.forEach( function (point){
-		var x = point.x;
-		var y = point.y;
-		rect(x, y, 110, 60);	
-	}); 
-	rooms3.forEach( function (point){
-		var x = point.x;
-		var y = point.y;
-		rect(x, y, 170, 60);	
-	}); 
-	sideroom.forEach(function (point){
-		var x = point.x;
-		var y = point.y;
-		rect(x, y, 30, 60)
-	});
-	sideroom2.forEach(function (point){
-		var x = point.x;
-		var y = point.y;
-		rect(x, y, 30, 40)
-	});
-	sideroom3.forEach(function (point){
-		var x = point.x;
-		var y = point.y;
-		rect(x, y, 50, 40)
-	});
-	sideroom4.forEach(function (point){
-		var x = point.x;
-		var y = point.y;
-		rect(x, y, 30, 20)
-	});
-	fill(150, 150, 150);
-	bathrooms.forEach( function (point){
-		var x = point.x;
-		var y = point.y;
-		rect(x, y, 35, 60);
-	});
-	bathroomlabel.forEach( function (point){
-		fill(300, 300, 300);
-		var x1 = point.x1;
-		var y1 = point.y1;
-		rect(x1, y1, 70, 15);
-		fill(0, 0, 200);
-		var x = point.x;
-		var y = point.y;
-		textSize(13);
-		text("bathrooms", x, y)
-	});
-	fill(250, 250, 250);
-	stairs.forEach( function (point){
-		var x = point.x;
-		var y = point.y;
-		rect(x, y, 20, 50);
-		var x1 = point.x1;
-		var x2 = point.x2;
-		var y1 = point.y1;
-		var y2 = point.y2;
-		line (x1, y1, x2, y2);
-	});
-	stairss.forEach (function (point){
-		var x = point.x;
-		var y = point.y;
-		rect(x, y, 50, 20);
-		var x1 = point.x1;
-		var x2 = point.x2;
-		var y1 = point.y1;
-		var y2 = point.y2;
-		line (x1, y1, x2, y2);
-	});
-	fill(100, 100, 100);
-	elevator.forEach (function (point){
-		var x = point.x;
-		var y = point.y;
-		rect(x, y, 25, 20);
-	});
-	fill(0, 0, 0);
-	roomnumber.forEach (function (point){
-		var x = point.x;
-		var y = point.y;	
-		var x1 = point.x1;
-		var y1 = point.y1;
-		var x2 = point.x2;
-		var y2 = point.y2;	
-		var x3 = point.x3;
-		var y3 = point.y3;
-		var x4 = point.x4;
-		var y4 = point.y4;	
-		var x5 = point.x5;
-		var y5 = point.y5;
-		var x6 = point.x6;
-		var y6 = point.y6;	
-		var x7 = point.x7;
-		var y7 = point.y7;
-		var x8 = point.x8;
-		var y8 = point.y8;	
-		textSize(25);
-		text("201", x, y);	
-		text("202", x1, y1);
-		text("203", x2, y2);
-		text("204", x3, y3);
-		text("205", x4, y4);
-		text("206", x5, y5);
-		text("207", x6, y6);
-		text("208", x7, y7);
-		text("209", x8, y8);
-	});
+function setup() {
+    var canvas = createCanvas(491, 191);
+    canvas.parent("floor-plan");
+
+    $('#room-info').html("<h3>More Info</h3>");
+}
+
+function draw() {
+    background("#F1F8E9");
+    noFill();
+    rect(0, 0, 490, 190);
+    fill(200, 200, 200);
+    rooms.forEach(function(room) {
+        room.display(images);
+    });
+
+    stairs.forEach(function(stair) {
+        stair.display();
+    });
+}
+
+function mousePressed() {
+    rooms.forEach(function(room) {
+        room.click();
+    });
 }
