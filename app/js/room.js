@@ -27,7 +27,6 @@ function Room(coordinatons, label, color, tsize, tcolor) {
         endShape(CLOSE);
 
         if ('male_rm' == label || 'female_rm' == label) {
-            var adjustment = label.length >= 3 ? 3.5 : 6;
             var img = images[label];
             image(img, this.boundary.midX - img.width / 2, this.boundary.midY - img.height / 2);
         } else {

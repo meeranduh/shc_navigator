@@ -9,7 +9,7 @@ https://www.npmjs.com/get-npm
 Install rimraf
 > npm install rimraf
 
-Run npm install to setup all the necessary library
+Run npm install to setup all the necessary libraries
 > npm install
 
 Start web service
