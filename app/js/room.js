@@ -7,7 +7,7 @@ function Room(coordinatons, label, color, tsize, tcolor) {
     this.tcolor = tcolor;
     this.selected = false;
 
-    this.display = function() {
+    this.display = function(images) {
         if (!this.boundary) {
             this.boundary = this.findboundary();
         }
@@ -26,13 +26,19 @@ function Room(coordinatons, label, color, tsize, tcolor) {
         );
         endShape(CLOSE);
 
-        if (label != "") {
-            fill(this.tcolor);
-            textSize(tsize);
+        if ('male_rm' == label || 'female_rm' == label) {
             var adjustment = label.length >= 3 ? 3.5 : 6;
-            text(label, this.boundary.midX - this.boundary.width / adjustment, this.boundary.midY + this.boundary.height / 6);
+            var img = images[label];
+            image(img, this.boundary.midX - img.width / 2, this.boundary.midY - img.height / 2);
+        } else {
+            if (label != "") {
+                fill(this.tcolor);
+                textSize(tsize);
+                var adjustment = label.length >= 3 ? 3.5 : 6;
+                text(label, this.boundary.midX - this.boundary.width / adjustment, this.boundary.midY + this.boundary.height / 6);
+            }
         }
-    }
+    };
 
     this.findboundary = function() {
         var boundary = {
@@ -75,14 +81,15 @@ function Room(coordinatons, label, color, tsize, tcolor) {
         boundary.midX = boundary.minX + (boundary.maxX - boundary.minX) / 2;
         boundary.midY = boundary.minY + (boundary.maxY - boundary.minY) / 2;
         return boundary;
-    }
+    };
 
     this.click = function() {
         this.selected = false;
         if ((this.boundary.minX < mouseX && this.boundary.maxX > mouseX) &&
             (this.boundary.minY < mouseY && this.boundary.maxY > mouseY)) {
-            $('#room-info').html("<h3>I am in " + this.label + "</h3>");
+            $('#room-info').html("<h3>I am in " + this.label +
+                "</h3><img src='assets/room_info/floor_5/501/teacher.png' alt='Smiley face' height='42' width='42'>");
             this.selected = true;
         }
-    }
+    };
 }
