@@ -29,6 +29,16 @@ stairs.push(new Stair(420, 0, 50, 40, 1, 3, 'vertical', 5, "#969696", "#F1F8E9")
 
 var images = {};
 
+function createRoom(x, y, w, h, number, color, tsize, tcolor) {
+	var coords = [];
+	coords.push({ x: x, y: y });
+	coords.push({ x: x + w, y: y });
+	coords.push({ x: x + w, y: y + h });
+	coords.push({ x: x, y: y + h });
+	
+	return new Room(coords, number, color, tsize, tcolor);
+}
+
 function preload() {
     images['male_rm'] = loadImage("assets/male.png");
     images['female_rm'] = loadImage("assets/female.png");
@@ -39,16 +49,6 @@ function setup() {
     canvas.parent("floor-plan");
 
     $('#room-info').html("<h3>More Info</h3>");
-}
-
-function createRoom(x, y, w, h, number, color, tsize, tcolor) {
-    var coords = [];
-    coords.push({ x: x, y: y });
-    coords.push({ x: x + w, y: y });
-    coords.push({ x: x + w, y: y + h });
-    coords.push({ x: x, y: y + h });
-
-    return new Room(coords, number, color, tsize, tcolor);
 }
 
 function draw() {
