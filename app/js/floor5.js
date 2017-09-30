@@ -11,8 +11,8 @@ rooms.push(createRoom(140, 0, 70, 70, "509", "#4CAF50", 25, "#000000"));
 rooms.push(createRoom(210, 0, 70, 70, "510", "#4CAF50", 25, "#000000"));
 rooms.push(createRoom(280, 0, 70, 70, "511", "#4CAF50", 25, "#000000"));
 
-rooms.push(createRoom(350, 0, 35, 70, "male_rm", "#558B2F", 15, "#ffffff"));
-rooms.push(createRoom(385, 0, 35, 70, "female_rm", "#558B2F", 15, "#ffffff"));
+rooms.push(createRoom(350, 0, 35, 70, "female_rm", "#558B2F", 15, "#ffffff"));
+rooms.push(createRoom(385, 0, 35, 70, "male_rm", "#558B2F", 15, "#ffffff"));
 
 rooms.push(createRoom(0, 95, 40, 25, "", "#33691E", 15, "#ffffff"));
 rooms.push(createRoom(0, 70, 40, 25, "", "#33691E", 15, "#ffffff"));
@@ -40,8 +40,8 @@ function createRoom(x, y, w, h, number, color, tsize, tcolor) {
 }
 
 function preload() {
-    images['male_rm'] = loadImage("assets/male.png");
     images['female_rm'] = loadImage("assets/female.png");
+    images['male_rm'] = loadImage("assets/male.png");
 }
 
 function setup() {
