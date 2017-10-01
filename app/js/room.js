@@ -33,8 +33,9 @@ function Room(coordinatons, label, color, tsize, tcolor) {
             if (label != "") {
                 fill(this.tcolor);
                 textSize(tsize);
-                var adjustment = label.length >= 3 ? 3.5 : 6;
-                text(label, this.boundary.midX - this.boundary.width / adjustment, this.boundary.midY + this.boundary.height / 6);
+                var widthAdj = label.length >= 3 ? 3.5 : 7;
+                var heightAdj = label.length <= 3 ? -6 : this.boundary.height;
+                text(label, this.boundary.midX - this.boundary.width / widthAdj, this.boundary.midY - this.boundary.height / heightAdj);
             }
         }
     };

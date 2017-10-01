@@ -1,20 +1,20 @@
 rooms = [];
 rooms.push(createRoom(280, 110, 70, 80, "303", "#4CAF50", 25, "#000000"));
-rooms.push(createRoom(350, 110, 70, 80, "", "#4CAF50", 25, "#000000"));
-rooms.push(createRoom(420, 110, 70, 80, "", "#4CAF50", 15, "#000000"));
+rooms.push(createRoom(350, 110, 70, 80, "Faculty\nLounge", "#4CAF50", 10, "#000000"));
+rooms.push(createRoom(420, 110, 70, 80, "Office of\nAdmission", "#4CAF50", 10, "#000000"));
 
-rooms.push(createRoom(70, 0, 60, 45, "", "#4CAF50", 15, "#000000"));
+rooms.push(createRoom(70, 0, 60, 45, "Conference\nRoom", "#4CAF50", 8, "#000000"));
 rooms.push(createRoom(70, 45, 22, 30, "", "#33691E", 15, "#000000"));
 rooms.push(createRoom(92, 45, 22, 30, "", "#33691E", 15, "#000000"));
 rooms.push(createRoom(130, 0, 27, 23, "", "#33691E", 15, "#000000"));
 rooms.push(createRoom(157, 0, 27, 23, "", "#33691E", 15, "#000000"));
 rooms.push(createRoom(184, 0, 27, 23, "", "#33691E", 15, "#000000"));
-rooms.push(createRoom(157, 23, 54, 52, "", "#4CAF50", 15, "#000000"));
+rooms.push(createRoom(157, 23, 54, 52, "Learning\nCommons", "#4CAF50", 8, "#000000"));
 rooms.push(createRoom(130, 28, 27, 12, "", "#33691E", 15, "#000000"));
 rooms.push(createRoom(139, 40, 18, 13, "", "#33691E", 15, "#000000"));
 rooms.push(createRoom(124, 53, 33, 22, "", "#33691E", 15, "#000000"));
 
-rooms.push(createRoom(280, 0, 50, 75, "", "#4CAF50", 15, "#000000"));
+rooms.push(createRoom(280, 0, 50, 75, "CLC", "#4CAF50", 15, "#000000"));
 rooms.push(createRoom(345, 0, 25, 35, "", "#33691E", 15, "#000000"));
 rooms.push(createRoom(345, 35, 25, 15, "", "#33691E", 15, "#000000"));
 rooms.push(createRoom(370, 0, 25, 50, "", "#33691E", 15, "#000000"));
@@ -38,7 +38,7 @@ rooms.push(createRoom(111, 150, 58, 40, "", "#33691E", 15, "#000000"));
 rooms.push(createRoom(169, 150, 41, 40, "", "#33691E", 15, "#000000"));
 rooms.push(createRoom(210, 150, 20, 40, "", "#33691E", 15, "#000000"));
 
-rooms.push(createRoom(230, 110, 50, 80, "", "#4CAF50", 15, "#000000"));
+rooms.push(createRoom(230, 110, 50, 80, "Main\nOffice", "#4CAF50", 10, "#000000"));
 
 rooms.push(createRoom(0, 85, 40, 25, "", "#33691E", 15, "#ffffff"));
 rooms.push(createRoom(0, 60, 40, 25, "", "#33691E", 15, "#ffffff"));
