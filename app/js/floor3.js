@@ -1,6 +1,6 @@
 rooms = [];
 rooms.push(createRoom(280, 110, 70, 80, "303", "#4CAF50", 25, "#000000"));
-rooms.push(createRoom(350, 110, 70, 80, "Faculty\nLounge", "#4CAF50", 10, "#000000"));
+rooms.push(createRoom(350, 110, 70, 80, "302", "#4CAF50", 25, "#000000"));
 rooms.push(createRoom(420, 110, 70, 80, "Office of\nAdmission", "#4CAF50", 10, "#000000"));
 
 rooms.push(createRoom(70, 0, 60, 45, "Conference\nRoom", "#4CAF50", 8, "#000000"));
