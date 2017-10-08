@@ -2,7 +2,7 @@
 var img;
 
 function preload() {
-    img = loadImage("assets/floor3.png");
+    img = loadImage("assets/floor6.png");
 }
 
 function setup() {

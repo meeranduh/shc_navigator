@@ -18,12 +18,12 @@ rooms.push(createRoom(385, 0, 35, 70, "female_rm", "#558B2F", 15, "#ffffff"));
 rooms.push(createRoom(0, 59, 42, 26, "", "#4CAF50", 25, "#000000"));
 rooms.push(createRoom(0, 85, 42, 26, "", "#4CAF50", 25, "#000000"));
 
-rooms.push(createRoom(420, 40, 25, 20, "e", "#B2FF59", 15, "#000000"));
-rooms.push(createRoom(445, 40, 25, 20, "e", "#B2FF59", 15, "#000000"));
+rooms.push(createRoom(420, 42, 20, 18, "e", "#B2FF59", 15, "#000000"));
+rooms.push(createRoom(440, 42, 20, 18, "e", "#B2FF59", 15, "#000000"));
 
 var stairs = [];
-stairs.push(new Stair(0, 20, 40, 50, 0, 1, 'horizontal', 5, "#969696", "#F1F8E9"));
-stairs.push(new Stair(420, 0, 50, 40, 1, 3, 'vertical', 5, "#969696", "#F1F8E9"));
+stairs.push(new Stair(420, 0, 42, 42, 1, 3, 'vertical', 5, "#969696", "#F1F8E9"));
+stairs.push(new Stair(0, 17, 42, 42, 0, 1, 'horzontial', 5, "#969696", "#F1F8E9"));
 
 var images = {};
 
@@ -38,8 +38,8 @@ function createRoom(x, y, w, h, number, color, tsize, tcolor) {
 }
 
 function preload() {
-    images['female_rm'] = loadImage("assets/female.png");
-    images['male_rm'] = loadImage("assets/male.png");
+    images.female_rm = loadImage("assets/female.png");
+    images.male_rm = loadImage("assets/male.png");
 }
 
 function setup() {

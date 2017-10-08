@@ -1,4 +1,4 @@
-rooms = [];
+var rooms = [];
 var walls = [];
 
 //walls.push(new Wall({ x: 275, y: 97 }, { x: 277, y: 103 }));
@@ -33,14 +33,14 @@ rooms.push(createRoom(420, 130, 50, 30, "", "#33691E", 15, "#000000"));
 rooms.push(createRoom(420, 160, 50, 30, "", "#33691E", 15, "#000000"));
 rooms.push(createRoom(470, 100, 20, 90, "", "#33691E", 15, "#000000"));
 
-rooms.push(createRoom(280, 0, 25, 70, "", "#33691E", 15, "#000000"));
+rooms.push(createRoom(280, 0, 25, 40, "", "#33691E", 15, "#000000"));
 rooms.push(createRoom(305, 0, 45, 35, "", "#33691E", 15, "#000000"));
 rooms.push(createRoom(305, 35, 45, 35, "", "#33691E", 15, "#000000"));
 
 rooms.push(createRoom(300, 100, 10, 20, "", "#33691E", 15, "000000"));
 rooms.push(createRoom(380, 100, 20, 20, "", "#33691E", 15, "000000"));
-rooms.push(createRoom(310, 100, 35, 20, "F", "#558B2F", 15, "#000000"));
-rooms.push(createRoom(345, 100, 35, 20, "M", "#558B2F", 15, "#000000"));
+rooms.push(createRoom(310, 100, 35, 20, "female_rm", "#558B2F", 15, "#000000"));
+rooms.push(createRoom(345, 100, 35, 20, "male_rm", "#558B2F", 15, "#000000"));
 
 rooms.push(createRoom(420, 40, 25, 20, "e", "#B2FF59", 15, "#000000"));
 rooms.push(createRoom(445, 40, 25, 20, "e", "#B2FF59", 15, "#000000"));
@@ -78,18 +78,18 @@ stairs.push(new Steps(470, 40, 28, 20, 'horizontal', 4, "#969696", "#F1F8E9"));
 var images = {};
 
 function createRoom(x, y, w, h, number, color, tsize, tcolor) {
-	var coords = [];
-	coords.push({ x: x, y: y });
-	coords.push({ x: x + w, y: y });
-	coords.push({ x: x + w, y: y + h });
-	coords.push({ x: x, y: y + h });
-	
-	return new Room(coords, number, color, tsize, tcolor);
+    var coords = [];
+    coords.push({ x: x, y: y });
+    coords.push({ x: x + w, y: y });
+    coords.push({ x: x + w, y: y + h });
+    coords.push({ x: x, y: y + h });
+
+    return new Room(coords, number, color, tsize, tcolor);
 }
 
 function preload() {
-    images['male_rm'] = loadImage("assets/male.png");
-    images['female_rm'] = loadImage("assets/female.png");
+    images.male_rm = loadImage("assets/male.png");
+    images.female_rm = loadImage("assets/female.png");
 }
 
 function setup() {
