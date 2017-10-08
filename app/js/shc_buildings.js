@@ -2,12 +2,12 @@
 var img;
 
 function preload() {
-    img = loadImage("assets/floor6.png");
+    img = loadImage("assets/shc_site.png");
 }
 
 function setup() {
     createCanvas(2000, 800);
-    //    rotate(PI / 20.0);
+    rotate(PI / 20.0);
     image(img, 0, 0);
 }
 
