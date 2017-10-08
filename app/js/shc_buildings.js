@@ -2,7 +2,8 @@
 var img;
 
 function preload() {
-    img = loadImage("assets/shc_site.png");
+    img = loadImage("assets/floor8.png");
+
 }
 
 function setup() {
