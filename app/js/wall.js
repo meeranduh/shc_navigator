@@ -11,10 +11,10 @@ function Wall(from, to) {
 
     this.drawRect = function(x, y, w, h) {
         beginShape();
-        vertex(x, this.toY(y));
-        vertex(x + w, this.toY(y));
-        vertex(x + w, this.toY(y + h));
-        vertex(x, this.toY(y + h));
+        vertex(this.toX(x), this.toY(y));
+        vertex(this.toX(x + w), this.toY(y));
+        vertex(this.toX(x + w), this.toY(y + h));
+        vertex(this.toX(x), this.toY(y + h));
         endShape(CLOSE);
     };
 
@@ -23,6 +23,14 @@ function Wall(from, to) {
             return height - y;
         } else {
             return y;
+        }
+    };
+
+    this.toX = function(x) {
+        if (this.flipped) {
+            return width - x;
+        } else {
+            return x;
         }
     };
 }

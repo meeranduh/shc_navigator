@@ -66,10 +66,10 @@ function Steps(x, y, w, h, direction, steps, fromColor, toColor) {
 
     this.drawRect = function(x, y, w, h) {
         beginShape();
-        vertex(x, this.toY(y));
-        vertex(x + w, this.toY(y));
-        vertex(x + w, this.toY(y + h));
-        vertex(x, this.toY(y + h));
+        vertex(this.toX(x), this.toY(y));
+        vertex(this.toX(x + w), this.toY(y));
+        vertex(this.toX(x + w), this.toY(y + h));
+        vertex(this.toX(x), this.toY(y + h));
         endShape(CLOSE);
     };
 
@@ -78,6 +78,14 @@ function Steps(x, y, w, h, direction, steps, fromColor, toColor) {
             return height - y;
         } else {
             return y;
+        }
+    };
+
+    this.toX = function(x) {
+        if (this.flipped) {
+            return width - x;
+        } else {
+            return x;
         }
     };
 }

@@ -41,8 +41,8 @@ rooms.push(createRoom(210, 150, 20, 40, "", "#33691E", 15, "#000000"));
 
 rooms.push(createRoom(230, 110, 50, 80, "Main\nOffice", "#4CAF50", 10, "#000000"));
 
-rooms.push(createRoom(0, 85, 40, 25, "", "#33691E", 15, "#ffffff"));
-rooms.push(createRoom(0, 60, 40, 25, "", "#33691E", 15, "#ffffff"));
+rooms.push(createRoom(0, 85, 40, 25, "x", "#33691E", 15, "#ffffff"));
+rooms.push(createRoom(0, 60, 40, 25, "x", "#33691E", 15, "#ffffff"));
 
 rooms.push(createRoom(420, 40, 25, 20, "", "#B2FF59", 15, "#000000"));
 rooms.push(createRoom(445, 40, 25, 20, "e", "#B2FF59", 15, "#000000"));
@@ -70,7 +70,7 @@ function setup() {
     var canvas = createCanvas(491, 191);
     canvas.parent("floor-plan");
 
-    flipBtn = createButton("FLIP");
+    flipBtn = createButton("Rotate");
     flipBtn.position(520, 10);
     flipBtn.mouseClicked(flip);
     flipBtn.parent("floor-plan")

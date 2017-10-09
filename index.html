@@ -20,7 +20,7 @@
         }
         
         .floor {
-            font-size: 20px;
+            font-size: 24px;
             padding-top: 5px;
             padding-bottom: 5px
         }
@@ -32,22 +32,58 @@
             padding-right: 5px;
         }
         
-        .logo {
-            border-size: 1px;
+        .logo_cell {
+            border-width: 1px;
             border-style: solid;
             border-color: black;
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 8px;
+            padding-right: 5px;
+        }
+        
+        .logo {
+            height: 25%;
+            width: 100%;
+            max-width: 300px;
+        }
+        
+        .lasalle_map {
+            height: 100%;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .lasalle_map_cell {
+            background-color: #F0F4C3;
+            height: 35%;
+            margin-bottom: 0px;
+            text-align: center;
+        }
+        
+        .lasalle {
+            background-color: #F0F4C3;
+            height: 65%;
+            margin-bottom: 0px;
+        }
+        
+        .depaul_map {
+            height: 100%;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .depaul_map_cell {
+            background-color: #DCEDC8;
+            height: 25%;
+            margin-bottom: 0px;
             text-align: center;
         }
         
         .depaul {
             background-color: #DCEDC8;
-            height: 55%;
-            margin-bottom: 0px;
-        }
-        
-        .lasalle {
-            background-color: #F0F4C3;
-            height: 55%;
+            height: 75%;
             margin-bottom: 0px;
         }
     </style>
@@ -56,15 +92,16 @@
 <body>
     <div class="container main">
         <div class="row">
-            <div class="col-sm-3 cell logo">
-                <img src="./assets/shc_small.png" alt="SHC" width="80px" height="75px">
+            <div class="col-sm-3 logo_cell ">
+                <img class="logo" src="./assets/shc_small.png" alt="SHC">
                 <BR> Welcome to the
                 <BR> SHC Open House
                 <BR> 10/21/2017
+                <img class="logo" src="./assets/shc_full_map_small.png" alt="SHC Map">
             </div>
             <div class="col-sm-4">
-                <div class="cell lasalle" style="height: 25%">
-                    <img src="./assets/LaSalle_Campus.png" alt="DePaul" width="90%" height="90%">
+                <div class="cell lasalle_map_cell">
+                    <img class="lasalle_map" src="./assets/LaSalle_Campus.png" alt="DePaul" width="100%" height="100%">
                 </div>
                 <div class="panel panel-default cell lasalle">
                     <div class="panel-heading title">LaSalle Campus</div>
@@ -72,7 +109,7 @@
                         <div class="col-sm-12 list-group">
                             <a class="list-group-item list-group-item-action floor" href="../floor6.html">Gymnasisum</a>
                             <a class="list-group-item list-group-item-action floor" href="../floor5.html">Plaza Level</a>
-                            <a class="list-group-item list-group-item-action floor"></a>
+                            <a class="list-group-item list-group-item-dark" href="#"></a>
                             <a class="list-group-item list-group-item-action floor" href="../floor6.html">Library</a>
                             <a class="list-group-item list-group-item-action floor" href="../floor5.html">Floor 5</a>
                             <a class="list-group-item list-group-item-action floor" href="../floor4.html">Floor 4</a>
@@ -84,8 +121,8 @@
                 </div>
             </div>
             <div class="col-sm-4">
-                <div class="cell depaul" style="height: 25%">
-                    <img src="./assets/DePaul_Campus.png" alt="DePaul" width="90%" height="90%">
+                <div class="cell depaul_map_cell">
+                    <img class="depaul_map" src="./assets/DePaul_Campus.png" alt="DePaul" width="100%" height="100%">
                 </div>
                 <div class="panel panel-default cell depaul">
                     <div class="panel-heading title">DePaul Campus</div>

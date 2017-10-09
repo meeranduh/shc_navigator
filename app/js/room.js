@@ -31,14 +31,18 @@ function Room(coordinatons, label, color, tsize, tcolor) {
 
         if ('male_rm' == label || 'female_rm' == label) {
             var img = images[label];
-            image(img, this.toX(this.boundary.midX - (this.flipped ? img.width / 2: -img.width/ 2)), this.toY(this.boundary.midY + (this.flipped ? img.height / 2 : -img.height / 2)));
+            image(img,
+                this.toX(this.boundary.midX + (this.flipped ? img.width / 2 : -img.width / 2)),
+                this.toY(this.boundary.midY + (this.flipped ? img.height / 2 : -img.height / 2)));
         } else {
             if (label != "") {
                 fill(this.tcolor);
                 textSize(tsize);
                 var widthAdj = label.length >= 3 ? 3.5 : 7;
                 var heightAdj = label.length <= 3 ? -6 : this.boundary.height;
-                text(label, this.boundary.midX - this.boundary.width / widthAdj, this.toY(this.boundary.midY + (this.flipped ? this.boundary.height / heightAdj : -this.boundary.height / heightAdj)));
+                text(label,
+                    this.toX(this.boundary.midX + (this.flipped ? this.boundary.width / widthAdj : -this.boundary.width / widthAdj)),
+                    this.toY(this.boundary.midY + (this.flipped ? this.boundary.height / heightAdj : -this.boundary.height / heightAdj)));
             }
         }
     };
@@ -50,6 +54,7 @@ function Room(coordinatons, label, color, tsize, tcolor) {
             return y;
         }
     };
+
     this.toX = function(x) {
         if (this.flipped) {
             return width - x;
@@ -103,7 +108,7 @@ function Room(coordinatons, label, color, tsize, tcolor) {
 
     this.click = function() {
         this.selected = false;
-        if ((this.boundary.minX < mouseX && this.boundary.maxX > mouseX) &&
+        if ((this.boundary.minX < this.toX(mouseX) && this.boundary.maxX > this.toX(mouseX)) &&
             (this.boundary.minY < this.toY(mouseY) && this.boundary.maxY > this.toY(mouseY))) {
             $('#room-info').html("<h3>I am in " + this.label +
                 "</h3><img src='assets/room_info/floor_5/501/teacher.png' alt='Smiley face' height='42' width='42'>");

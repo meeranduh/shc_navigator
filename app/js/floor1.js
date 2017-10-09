@@ -98,7 +98,7 @@ function setup() {
     var canvas = createCanvas(491, 191);
     canvas.parent("floor-plan");
 
-    flipBtn = createButton("FLIP");
+    flipBtn = createButton("Rotate");
     flipBtn.position(520, 10);
     flipBtn.mouseClicked(flip);
     flipBtn.parent("floor-plan")
