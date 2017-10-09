@@ -24,14 +24,14 @@ function Room(coordinatons, label, color, tsize, tcolor) {
         beginShape();
         this.coordinatons.forEach(
             function(item, idx) {
-                vertex(item.x, self.toY(item.y));
+                vertex(self.toX(item.x), self.toY(item.y));
             }
         );
         endShape(CLOSE);
 
         if ('male_rm' == label || 'female_rm' == label) {
             var img = images[label];
-            image(img, this.boundary.midX - img.width / 2, this.toY(this.boundary.midY + (this.flipped ? img.height / 2 : -img.height / 2)));
+            image(img, this.toX(this.boundary.midX - (this.flipped ? img.width / 2: -img.width/ 2)), this.toY(this.boundary.midY + (this.flipped ? img.height / 2 : -img.height / 2)));
         } else {
             if (label != "") {
                 fill(this.tcolor);
@@ -48,6 +48,13 @@ function Room(coordinatons, label, color, tsize, tcolor) {
             return height - y;
         } else {
             return y;
+        }
+    };
+    this.toX = function(x) {
+        if (this.flipped) {
+            return width - x;
+        } else {
+            return x;
         }
     };
 
