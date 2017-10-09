@@ -1,15 +1,17 @@
-function Steps(x, y, width, height, direction, steps, fromColor, toColor) {
+function Steps(x, y, w, h, direction, steps, fromColor, toColor) {
     this.x = x;
     this.y = y;
-    this.width = width;
-    this.height = height;
+    this.w = w;
+    this.h = h;
     this.direction = direction;
     this.steps = steps;
     this.fromColor = fromColor;
     this.toColor = toColor;
     this.colorRange = [];
+    this.flipped = false;
 
-    this.display = function() {
+    this.display = function(flip) {
+        this.flipped = flip;
         if (this.colorRange.length == 0) {
             this.fillColorRange();
         }
@@ -17,12 +19,12 @@ function Steps(x, y, width, height, direction, steps, fromColor, toColor) {
         // draw 4 box
         noFill();
         stroke("#000000");
-        rect(this.x, this.y, this.width, this.height);
+        this.drawRect(this.x, this.y, this.w, this.h);
 
         if ('vertical' == direction) {
-            this.drawVerticalSteps({ x: this.x, y: this.y }, this.width, this.height, "L2R");
+            this.drawVerticalSteps({ x: this.x, y: this.y }, this.w, this.h, "L2R");
         } else {
-            this.drawHorizontalSteps({ x: this.x, y: this.y }, this.width, this.height, "T2B");
+            this.drawHorizontalSteps({ x: this.x, y: this.y }, this.w, this.h, "T2B");
         }
 
     };
@@ -44,7 +46,7 @@ function Steps(x, y, width, height, direction, steps, fromColor, toColor) {
             } else {
                 fill(this.colorRange[this.steps - i - 1]);
             }
-            rect(point.x + i * stepSize, point.y, stepSize, h);
+            this.drawRect(point.x + i * stepSize, point.y, stepSize, h);
         }
 
     };
@@ -58,7 +60,24 @@ function Steps(x, y, width, height, direction, steps, fromColor, toColor) {
             } else {
                 fill(this.colorRange[this.steps - i - 1]);
             }
-            rect(point.x, point.y + i * stepSize, w, stepSize);
+            this.drawRect(point.x, point.y + i * stepSize, w, stepSize);
+        }
+    };
+
+    this.drawRect = function(x, y, w, h) {
+        beginShape();
+        vertex(x, this.toY(y));
+        vertex(x + w, this.toY(y));
+        vertex(x + w, this.toY(y + h));
+        vertex(x, this.toY(y + h));
+        endShape(CLOSE);
+    };
+
+    this.toY = function(y) {
+        if (this.flipped) {
+            return height - y;
+        } else {
+            return y;
         }
     };
 }

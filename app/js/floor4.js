@@ -1,4 +1,5 @@
-rooms = [];
+var rooms = [];
+var walls = [];
 rooms.push(createRoom(0, 120, 90, 70, "406", "#4CAF50", 25, "#000000"));
 rooms.push(createRoom(90, 120, 90, 70, "405", "#4CAF50", 25, "#000000"));
 rooms.push(createRoom(180, 120, 90, 70, "404", "#4CAF50", 25, "#000000"));
@@ -40,11 +41,22 @@ function preload() {
     images['male_rm'] = loadImage("assets/male.png");
 }
 
+var flipBtn, flipDirection = false;
+
 function setup() {
     var canvas = createCanvas(491, 191);
     canvas.parent("floor-plan");
 
+    flipBtn = createButton("FLIP");
+    flipBtn.position(520, 10);
+    flipBtn.mouseClicked(flip);
+    flipBtn.parent("floor-plan")
+
     $('#room-info').html("<h3>More Info</h3>");
+}
+
+function flip() {
+    flipDirection = !flipDirection;
 }
 
 function draw() {
@@ -52,12 +64,16 @@ function draw() {
     noFill();
     rect(0, 0, 490, 190);
     fill(200, 200, 200);
+    walls.forEach(function(wall) {
+        wall.display(flipDirection);
+    });
+
     rooms.forEach(function(room) {
-        room.display(images);
+        room.display(images, flipDirection);
     });
 
     stairs.forEach(function(stair) {
-        stair.display();
+        stair.display(flipDirection);
     });
 }
 

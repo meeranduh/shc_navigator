@@ -1,8 +1,8 @@
-function Stair(x, y, width, height, enter, exit, direction, steps, fromColor, toColor) {
+function Stair(x, y, w, h, enter, exit, direction, steps, fromColor, toColor) {
     this.x = x;
     this.y = y;
-    this.width = width;
-    this.height = height;
+    this.w = w;
+    this.h = h;
     this.enter = enter;
     this.exit = exit;
     this.direction = direction;
@@ -10,14 +10,17 @@ function Stair(x, y, width, height, enter, exit, direction, steps, fromColor, to
     this.fromColor = fromColor;
     this.toColor = toColor;
     this.colorRange = [];
+    this.flipped = false;
 
-    this.display = function() {
+    this.display = function(flip) {
+        this.flipped = flip;
+
         if (this.colorRange.length == 0) {
             this.fillColorRange();
         }
 
-        var midX = this.x + this.width / 2;
-        var midY = this.y + this.height / 2;
+        var midX = this.x + this.w / 2;
+        var midY = this.y + this.h / 2;
 
         // draw 4 box
         noFill();
@@ -28,17 +31,19 @@ function Stair(x, y, width, height, enter, exit, direction, steps, fromColor, to
         boxes.push({ x: this.x, y: midY });
         boxes.push({ x: midX, y: midY });
 
-        rect(this.x, this.y, this.width, this.height);
+        // rect(this.x, this.y + this.h, this.w, this.h);
+        this.drawRect(this.x, this.y, this.w, this.h);
+        var self = this;
         for (var i = 0; i < boxes.length; i++) {
-            rect(boxes[i].x, boxes[i].y, this.width / 2, this.height / 2);
+            self.drawRect(boxes[i].x, boxes[i].y, this.w / 2, this.h / 2);
         }
 
         if ('vertical' == direction) {
-            this.drawVerticalSteps(boxes[this.enter], this.width / 2, this.height / 2, "L2R");
-            this.drawVerticalSteps(boxes[this.exit], this.width / 2, this.height / 2, "R2L");
+            this.drawVerticalSteps(boxes[this.enter], this.w / 2, this.h / 2, "L2R");
+            this.drawVerticalSteps(boxes[this.exit], this.w / 2, this.h / 2, "R2L");
         } else {
-            this.drawHorizontalSteps(boxes[this.enter], this.width / 2, this.height / 2, "T2B");
-            this.drawHorizontalSteps(boxes[this.exit], this.width / 2, this.height / 2, "B2T");
+            this.drawHorizontalSteps(boxes[this.enter], this.w / 2, this.h / 2, "T2B");
+            this.drawHorizontalSteps(boxes[this.exit], this.w / 2, this.h / 2, "B2T");
         }
 
     };
@@ -60,7 +65,7 @@ function Stair(x, y, width, height, enter, exit, direction, steps, fromColor, to
             } else {
                 fill(this.colorRange[this.steps - i - 1]);
             }
-            rect(point.x + i * stepSize, point.y, stepSize, h);
+            this.drawRect(point.x + i * stepSize, point.y, stepSize, h);
         }
 
     };
@@ -74,7 +79,24 @@ function Stair(x, y, width, height, enter, exit, direction, steps, fromColor, to
             } else {
                 fill(this.colorRange[this.steps - i - 1]);
             }
-            rect(point.x, point.y + i * stepSize, w, stepSize);
+            this.drawRect(point.x, point.y + i * stepSize, w, stepSize);
+        }
+    };
+
+    this.drawRect = function(x, y, w, h) {
+        beginShape();
+        vertex(x, this.toY(y));
+        vertex(x + w, this.toY(y));
+        vertex(x + w, this.toY(y + h));
+        vertex(x, this.toY(y + h));
+        endShape(CLOSE);
+    };
+
+    this.toY = function(y) {
+        if (this.flipped) {
+            return height - y;
+        } else {
+            return y;
         }
     };
 }

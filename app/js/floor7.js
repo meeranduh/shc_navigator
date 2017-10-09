@@ -21,11 +21,22 @@ function preload() {
     images.female_rm = loadImage("assets/female.png");
 }
 
+var flipBtn, flipDirection = false;
+
 function setup() {
     var canvas = createCanvas(481, 321);
     canvas.parent("floor-plan");
 
+    flipBtn = createButton("FLIP");
+    flipBtn.position(520, 10);
+    flipBtn.mouseClicked(flip);
+    flipBtn.parent("floor-plan")
+
     $('#room-info').html("<h3>More Info</h3>");
+}
+
+function flip() {
+    flipDirection = !flipDirection;
 }
 
 function draw() {
@@ -35,15 +46,15 @@ function draw() {
     fill(200, 200, 200);
 
     walls.forEach(function(wall) {
-        wall.display();
+        wall.display(flipDirection);
     });
 
     rooms.forEach(function(room) {
-        room.display(images);
+        room.display(images, flipDirection);
     });
 
     stairs.forEach(function(stair) {
-        stair.display();
+        stair.display(flipDirection);
     });
 }
 
