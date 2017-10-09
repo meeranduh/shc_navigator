@@ -2,8 +2,8 @@ var walls = [];
 walls.push(new Wall({ x: 20, y: 19 }, { x: 22, y: 85 }));
 
 var rooms = [];
-rooms.push(createRoom(42, 0, 235, 160, "Library", "#B2FF59", 32, "#000000"));
-rooms.push(createRoom(406, 89, 84, 101, "Chapel", "#B2FF59", 15, "#000000"));
+rooms.push(createRoom(42, 0, 235, 160, "Library", "#4CAF50", 36, "#000000"));
+rooms.push(createRoom(406, 89, 84, 101, "Chapel", "#4CAF50", 15, "#000000"));
 rooms.push(createRoom(329, 158, 70, 25, "Veranda", "#F1F8E9", 10, "#000000"));
 
 rooms.push(createRoom(420, 40, 25, 20, "e", "#B2FF59", 15, "#000000"));
