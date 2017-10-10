@@ -1,8 +1,31 @@
 var walls = [];
 
 var rooms = [];
+rooms.push(createRoom(28, 0, 80, 60, "801", "#4CAF50", 25, "#000000"));
+rooms.push(createRoom(28, 60, 80, 58, "802", "#4CAF50", 25, "#000000"));
+rooms.push(createRoom(28, 118, 80, 58, "803", "#4CAF50", 25, "#000000"));
+
+rooms.push(createRoom(1, 253, 60, 67, "804", "#4CAF50", 20, "#000000"));
+rooms.push(createRoom(60, 253, 60, 67, "805", "#4CAF50", 20, "#000000"));
+rooms.push(createRoom(120, 253, 90, 67, "806", "#4CAF50", 20, "#000000"));
+rooms.push(createRoom(210, 253, 60, 67, "808", "#4CAF50", 20, "#000000"));
+rooms.push(createRoom(290, 253, 70, 67, "810", "#4CAF50", 20, "#000000"));
+rooms.push(createRoom(360, 253, 60, 67, "811", "#4CAF50", 20, "#000000"));
+rooms.push(createRoom(420, 253, 60, 67, "812", "#4CAF50", 20, "#000000"));
+
+rooms.push(createRoom(164, 193, 45, 33, "807", "#4CAF50", 18, "#000000"));
+rooms.push(createRoom(272, 172, 56, 54, "809", "#4CAF50", 20, "#000000"));
+
+rooms.push(createRoom(388, 116, 60, 60, "813", "#4CAF50", 20, "#000000"));
+rooms.push(createRoom(388, 61, 60, 55, "814", "#4CAF50", 20, "#000000"));
+rooms.push(createRoom(388, 0, 60, 60, "815", "#4CAF50", 20, "#000000"));
+
+rooms.push(createRoom(28, 177, 80, 31, "male_rm", "#558B2F", 15, "#ffffff"));
+rooms.push(createRoom(388, 192, 60, 34, "female_rm", "#558B2F", 15, "#ffffff"));
 
 var stairs = [];
+stairs.push(new Stair(120, 193, 45, 33, 0, 2, 'vertical', 5, "#969696", "#F1F8E9"));
+stairs.push(new Stair(328, 193, 45, 33, 1, 3, 'vertical', 5, "#969696", "#F1F8E9"));
 
 function createRoom(x, y, w, h, number, color, tsize, tcolor) {
     var coords = [];
