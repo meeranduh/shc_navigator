@@ -1,19 +1,22 @@
 var walls = [];
 walls.push(new Wall({ x: 20, y: 19 }, { x: 22, y: 85 }));
 
+var labels = [];
+labels.push(new Label({ x: 229, y: 185 }, "Veranda", 14, "#000000"));
+
 var rooms = [];
-rooms.push(createRoom(42, 0, 235, 160, "Library", "#4CAF50", 36, "#000000"));
-rooms.push(createRoom(406, 89, 84, 101, "Chapel", "#4CAF50", 15, "#000000"));
-rooms.push(createRoom(329, 158, 70, 25, "Veranda", "#F1F8E9", 10, "#000000"));
+rooms.push(createRoom(42, 0, 235, 160, "Library", "#69b342", 36, "#ffffff", "<ul><li>College Advising</li><li>De Paul Scholar Program</li></ul>"));
+rooms.push(createRoom(406, 89, 84, 101, "Chapel", "#69b342", 15, "#ffffff"));
+// rooms.push(createRoom(329, 158, 70, 25, "Veranda", "#ffffff", 10, "#000000"));
 
-rooms.push(createRoom(420, 40, 25, 20, "e", "#B2FF59", 15, "#000000"));
-rooms.push(createRoom(445, 40, 25, 20, "e", "#B2FF59", 15, "#000000"));
+rooms.push(createRoom(420, 40, 25, 20, "e", "#005b7d", 15, "#ffffff"));
+rooms.push(createRoom(445, 40, 25, 20, "e", "#005b7d", 15, "#ffffff"));
 
-rooms.push(createRoom(365, 0, 55, 35, "male_rm", "#558B2F", 15, "#ffffff"));
-rooms.push(createRoom(365, 35, 35, 38, "female_rm", "#558B2F", 15, "#ffffff"));
+rooms.push(createRoom(365, 0, 55, 35, "male_rm", "#5b686d", 15, "#ffffff"));
+rooms.push(createRoom(365, 35, 35, 38, "female_rm", "#5b686d", 15, "#ffffff"));
 
-rooms.push(createRoom(0, 87, 42, 70, "", "#33691E", 15, "#000000"));
-rooms.push(createRoom(352, 89, 35, 40, "", "#33691E", 15, "#000000"));
+rooms.push(createRoom(0, 87, 42, 70, "", "#005032", 15, "#000000"));
+rooms.push(createRoom(352, 89, 35, 40, "", "#005032", 15, "#000000"));
 rooms.push(new Room([{ x: 276, y: 0 },
     { x: 365, y: 0 },
     { x: 365, y: 73 },
@@ -24,7 +27,7 @@ rooms.push(new Room([{ x: 276, y: 0 },
     { x: 291, y: 41 },
     { x: 281, y: 46 },
     { x: 276, y: 41 }
-], "", "#33691E", 15, "#000000"));
+], "", "#005032", 15, "#000000"));
 
 rooms.push(new Room([{ x: 283, y: 113 },
     { x: 294, y: 108 },
@@ -32,7 +35,7 @@ rooms.push(new Room([{ x: 283, y: 113 },
     { x: 313, y: 150 },
     { x: 276, y: 150 },
     { x: 276, y: 121 }
-], "", "#33691E", 15, "#000000"));
+], "", "#005032", 15, "#000000"));
 
 rooms.push(new Room([{ x: 314, y: 109 },
     { x: 320, y: 105 },
@@ -41,39 +44,42 @@ rooms.push(new Room([{ x: 314, y: 109 },
     { x: 352, y: 89 },
     { x: 352, y: 137 },
     { x: 314, y: 137 }
-], "", "#33691E", 15, "#000000"));
+], "", "#005032", 15, "#000000"));
 
 var stairs = [];
 stairs.push(new Stair(420, 0, 42, 40, 1, 3, 'vertical', 5, "#969696", "#F1F8E9"));
 stairs.push(new Steps(22, 20, 19, 22, 'horizontal', 6, "#969696", "#F1F8E9"));
 
-function createRoom(x, y, w, h, number, color, tsize, tcolor) {
+function createRoom(x, y, w, h, number, color, tsize, tcolor, events) {
     var coords = [];
     coords.push({ x: x, y: y });
     coords.push({ x: x + w, y: y });
     coords.push({ x: x + w, y: y + h });
     coords.push({ x: x, y: y + h });
 
-    return new Room(coords, number, color, tsize, tcolor);
+    return new Room(coords, number, color, tsize, tcolor, events);
 }
 
 var images = {};
+var rfont;
 
 function preload() {
     images.male_rm = loadImage("assets/male.png");
     images.female_rm = loadImage("assets/female.png");
+    rfont = loadFont("assets/fonts/Roboto-Light.ttf");
 }
 
 var flipBtn, flipDirection = false;
 
 function setup() {
+    textFont(rfont);
     var canvas = createCanvas(491, 191);
     canvas.parent("floor-plan");
 
     flipBtn = createButton("Rotate");
     flipBtn.position(520, 10);
     flipBtn.mouseClicked(flip);
-    flipBtn.parent("floor-plan")
+    flipBtn.parent("floor-plan");
 
     $('#room-info').html("<h3>More Info</h3>");
 }
@@ -83,8 +89,9 @@ function flip() {
 }
 
 function draw() {
-    background("#F1F8E9");
+    background("#ffffff");
     noFill();
+    stroke("#909090");
     rect(0, 0, 490, 190);
     fill(200, 200, 200);
 
@@ -98,6 +105,10 @@ function draw() {
 
     stairs.forEach(function(stair) {
         stair.display(flipDirection);
+    });
+
+    labels.forEach(function(label) {
+        label.display(flipDirection);
     });
 }
 

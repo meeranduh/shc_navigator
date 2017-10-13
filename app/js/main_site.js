@@ -9,19 +9,19 @@ rooms.push(new Room([{ x: 116, y: 86 },
     { x: 56, y: 284 },
     { x: 56, y: 130 },
     { x: 116, y: 130 },
-], "DePaul Campus", "#4caf50", 34, "#000000"));
+], "De Paul Campus", "#69b342", 32, "#ffffff"));
 rooms.push(new Room([
     { x: 724, y: 418 },
-    { x: 1054, y: 414 },
+    { x: 1054, y: 418 },
     { x: 1054, y: 556 },
     { x: 724, y: 556 }
-], "LaSalle Campus", "#4caf50", 26, "#000000"));
+], "Student Life Center", "#005b7d", 22, "#ffffff"));
 rooms.push(new Room([
     { x: 812, y: 644 },
     { x: 1060, y: 644 },
     { x: 1060, y: 747 },
     { x: 812, y: 747 },
-], "", "#4caf50", 26, "#000000"));
+], "La Salle\nAcademic Building", "#005032", 18, "#ffffff"));
 
 var stairs = [];
 var images = {};

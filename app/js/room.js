@@ -1,4 +1,4 @@
-function Room(coordinatons, label, color, tsize, tcolor) {
+function Room(coordinatons, label, color, tsize, tcolor, events) {
     this.coordinatons = coordinatons;
     this.label = label;
     this.boundary = undefined;
@@ -7,6 +7,7 @@ function Room(coordinatons, label, color, tsize, tcolor) {
     this.tcolor = tcolor;
     this.selected = false;
     this.flipped = false;
+    this.events = events;
 
     this.display = function(images, flip) {
         this.flipped = flip;
@@ -17,10 +18,13 @@ function Room(coordinatons, label, color, tsize, tcolor) {
 
         if (this.selected) {
             fill("#76FF03");
+            stroke("#000000");
         } else {
             fill(this.color);
+            stroke("#ffffff");
         }
 
+        stroke("#ffffff");
         beginShape();
         this.coordinatons.forEach(
             function(item, idx) {
@@ -36,7 +40,13 @@ function Room(coordinatons, label, color, tsize, tcolor) {
                 this.toY(this.boundary.midY + (this.flipped ? img.height / 2 : -img.height / 2)));
         } else {
             if (label != "") {
-                fill(this.tcolor);
+                if (this.selected) {
+                    fill("#000000");
+                    stroke("#000000");
+                } else {
+                    fill("#ffffff");
+                    stroke("#ffffff");
+                }
                 textSize(tsize);
                 var widthAdj = label.length >= 3 ? 3.5 : 7;
                 var heightAdj = label.length <= 3 ? -6 : this.boundary.height;
@@ -108,11 +118,24 @@ function Room(coordinatons, label, color, tsize, tcolor) {
 
     this.click = function() {
         this.selected = false;
-        if ((this.boundary.minX < this.toX(mouseX) && this.boundary.maxX > this.toX(mouseX)) &&
-            (this.boundary.minY < this.toY(mouseY) && this.boundary.maxY > this.toY(mouseY))) {
-            $('#room-info').html("<h3>I am in " + this.label +
-                "</h3><img src='assets/room_info/floor_5/501/teacher.png' alt='Smiley face' height='42' width='42'>");
-            this.selected = true;
+
+        if (label != "") {
+            if ((this.boundary.minX < this.toX(mouseX) && this.boundary.maxX > this.toX(mouseX)) &&
+                (this.boundary.minY < this.toY(mouseY) && this.boundary.maxY > this.toY(mouseY))) {
+
+                var displayLabel = this.label;
+
+                if (displayLabel == "e") {
+                    displayLabel = "Elevator";
+                } else if (displayLabel == "male_rm" || displayLabel == "female_rm") {
+                    displayLabel = "Restroom";
+                }
+                $('#room-info').html("<h3>" + displayLabel +
+                    "</h3>" + (this.events ? this.events : ""));
+                // <img src='assets/room_info/floor_5/501/teacher.png' alt='Smiley face' height='42' width='42'></img>
+
+                this.selected = true;
+            }
         }
     };
 }

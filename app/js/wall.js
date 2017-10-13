@@ -5,6 +5,7 @@ function Wall(from, to) {
 
     this.display = function(flip) {
         this.flipped = flip;
+        stroke("#909090");
         fill("#939393");
         this.drawRect(from.x, from.y, to.x - from.x, to.y - from.y);
     };

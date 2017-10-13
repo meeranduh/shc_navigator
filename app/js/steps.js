@@ -18,7 +18,7 @@ function Steps(x, y, w, h, direction, steps, fromColor, toColor) {
 
         // draw 4 box
         noFill();
-        stroke("#000000");
+        stroke("#909090");
         this.drawRect(this.x, this.y, this.w, this.h);
 
         if ('vertical' == direction) {

@@ -24,7 +24,7 @@ function Stair(x, y, w, h, enter, exit, direction, steps, fromColor, toColor) {
 
         // draw 4 box
         noFill();
-        stroke("#000000");
+        stroke("#909090");
         var boxes = [];
         boxes.push({ x: this.x, y: this.y });
         boxes.push({ x: midX, y: this.y });
