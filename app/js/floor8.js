@@ -2,7 +2,6 @@ var walls = [];
 
 var rooms = [];
 
-
 var stairs = [];
 
 function createRoom(x, y, w, h, number, color, tsize, tcolor, events) {
