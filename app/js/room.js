@@ -119,7 +119,7 @@ function Room(coordinatons, label, color, tsize, tcolor, events) {
     this.click = function() {
         this.selected = false;
 
-        if (label != "") {
+        if (label != "" && label != "store") {
             if ((this.boundary.minX < this.toX(mouseX) && this.boundary.maxX > this.toX(mouseX)) &&
                 (this.boundary.minY < this.toY(mouseY) && this.boundary.maxY > this.toY(mouseY))) {
 

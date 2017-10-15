@@ -3,7 +3,7 @@ var img;
 var ppoint = { x: 0, y: 0 };
 
 function preload() {
-    img = loadImage("assets/floor8.png");
+    img = loadImage("assets/dinning.PNG");
 
 }
 
