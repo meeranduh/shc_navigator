@@ -5,6 +5,7 @@ walls.push(new Wall({x: 248, y:136}, {x: 250, y: 186}));
 walls.push(new Wall({x: 299, y:110}, {x: 301, y: 186}));
 walls.push(new Wall({x: 329, y:110}, {x: 331, y: 161}));
 walls.push(new Wall({x: 329, y:150}, {x: 356, y: 152}));
+walls.push(new Wall({x: 357, y:136}, {x: 359, y: 186}));
 
 var rooms = [];
 rooms.push(createRoom(0, 0, 250, 138, "Pavilion", "#4CAF50", 40, "#000000", "test"));
