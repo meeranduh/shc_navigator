@@ -2,7 +2,6 @@ var walls = [];
 walls.push(new Wall({x: 327, y:31}, {x: 354, y: 33}));
 walls.push(new Wall({x: 315, y:66}, {x: 317, y: 87}));
 walls.push(new Wall({x: 329, y:56}, {x: 331, y: 160}));
-walls.push(new Wall({x: 273, y:157}, {x: 275, y: 186}));
 
 var rooms = [];
 rooms.push(createRoom(25, 44, 250, 115, "Dining Hall", "#4CAF50", 30, "#000000", "test"))
