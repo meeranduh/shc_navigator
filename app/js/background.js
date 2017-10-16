@@ -13,7 +13,7 @@ function preload() {
 function setup() {
     frameRate(30);
     textFont(rfont);
-    var canvas = createCanvas(1200, 1000);
+    var canvas = createCanvas(1200, 1200);
     canvas.parent("BG");
 }
 
