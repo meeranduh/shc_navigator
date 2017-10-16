@@ -1,15 +1,15 @@
 var walls = [];
-walls.push(new Wall({x:462, y:218}, {x:464, y:236}));
-walls.push(new Wall({x:431, y:236}, {x:464, y:238}));
-walls.push(new Wall({x:124, y:254}, {x:140, y:256}));
-walls.push(new Wall({x:198, y:254}, {x:212, y:256}));
-walls.push(new Wall({x:271, y:254}, {x:286, y:256}));
-walls.push(new Wall({x:344, y:254}, {x:362, y:256}));
-walls.push(new Wall({x:120, y:192}, {x:122, y:227}));
-walls.push(new Wall({x:120, y:225}, {x:164, y:227}));
-walls.push(new Wall({x:71, y:225}, {x:105, y:227}));
-walls.push(new Wall({x:370, y:192}, {x:372, y:227}));
-walls.push(new Wall({x:327, y:225}, {x:372, y:227}));
+walls.push(new Wall({ x: 462, y: 218 }, { x: 464, y: 236 }));
+walls.push(new Wall({ x: 431, y: 236 }, { x: 464, y: 238 }));
+walls.push(new Wall({ x: 124, y: 254 }, { x: 140, y: 256 }));
+walls.push(new Wall({ x: 198, y: 254 }, { x: 212, y: 256 }));
+walls.push(new Wall({ x: 271, y: 254 }, { x: 286, y: 256 }));
+walls.push(new Wall({ x: 344, y: 254 }, { x: 362, y: 256 }));
+walls.push(new Wall({ x: 120, y: 192 }, { x: 122, y: 227 }));
+walls.push(new Wall({ x: 120, y: 225 }, { x: 164, y: 227 }));
+walls.push(new Wall({ x: 71, y: 225 }, { x: 105, y: 227 }));
+walls.push(new Wall({ x: 370, y: 192 }, { x: 372, y: 227 }));
+walls.push(new Wall({ x: 327, y: 225 }, { x: 372, y: 227 }));
 
 var rooms = [];
 rooms.push(createRoom(30, 1, 75, 60, "801", "#69b342", 20, "#ffffff"));
@@ -51,7 +51,7 @@ rooms.push(createRoom(387, 192, 44, 34, "female_rm", "#5b686d", 15, "#ffffff"));
 rooms.push(createRoom(71, 210, 20, 16, "e", "#005b7d", 15, "#ffffff"));
 
 rooms.push(new Room([
-	{ x: 144, y: 0 },
+    { x: 144, y: 0 },
     { x: 122, y: 35 },
     { x: 145, y: 47 },
     { x: 126, y: 88 },
@@ -75,6 +75,9 @@ stairs.push(new Steps(350, 197, 20, 15, 'vertical', 6, "#F1F8E9", "#969696"));
 stairs.push(new Steps(449, 15, 15, 23, 'horizontal', 6, "#969696", "#F1F8E9"));
 stairs.push(new Steps(464, 15, 15, 23, 'horizontal', 6, "#F1F8E9", "#969696"));
 stairs.push(new Steps(464, 218, 15, 8, 'horizontal', 2, "#969696", "#F1F8E9"));
+
+stairs.push(new Steps(145, 197, 18, 28, 'horizontal', 1, "#ffffff", "#ffffff"));
+stairs.push(new Steps(328, 197, 21, 28, 'horizontal', 1, "#ffffff", "#ffffff"));
 
 function createRoom(x, y, w, h, number, color, tsize, tcolor, events) {
     var coords = [];
