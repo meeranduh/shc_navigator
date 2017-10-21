@@ -107,7 +107,9 @@ function setup() {
     flipBtn.mouseClicked(flip);
     flipBtn.parent("floor-plan");
 
-    $('#room-info').html("<h3>Welcome to 1st floor</h3>");
+    var msg = "<h2>Counseling</h2><h3>Our Mission</h3>Sacred Heart Cathedral’s Counseling and Advising Program provides parents and students the academic guidance they need to navigate a challenging college prep curriculum commensurate with the individual student’s gifts, talents, and aspirations in order to make the transition from secondary school to college as seamless as possible. In addition, school counselors guide, support, encourage and nurture students to advance emotionally, socially and spiritually from adolescence to adulthood.<br><a style='font-size:20px' href='http://www.shcp.edu/academics-2/counseling/'>Department Home<a/>";
+    msg += "<h2>Religious Studies</h2><h3>Our Mission</h3>Inspired by our founders and in the spirit of the US Bishops’ secondary schools curriculum framework, SHC’s Religious Studies Department helps our students realize and deepen their relationships with God and with others. We embrace the Lasallian Vincentian mission to provide faith formation and education that prepare students to become service-oriented leaders with a commitment to living the Gospel.<br><a style='font-size:20px' href='http://www.shcp.edu/department/religious-studies/'>Department Home<a/><BR>";
+    $('#room-info').html(msg);
 }
 
 function flip() {

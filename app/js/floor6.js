@@ -81,7 +81,12 @@ function setup() {
     flipBtn.mouseClicked(flip);
     flipBtn.parent("floor-plan");
 
-    $('#room-info').html("<h3>More Info</h3>");
+    var department = "De Paul Scholar Program";
+    var mission = "The De Paul Scholar Program is a rigorous four-year academic and enrichment program informed by the charisms of St. John Baptist de La Salle and St. Vincent de Paul. De Paul Scholars are passionate about engaging the world of ideas and solving real-world challenges of injustice and inequality. With these goals in mind, De Paul Scholars achieve grades which place them in the top 10 percent of their class and demonstrate leadership daily in the classroom. The De Paul Scholar curriculum includes summer workshops and enrichment courses; dedicated sections of ninth grade English and Social Studies; access to a wide array of Honors and Advanced Placement courses; and a culminating, college-level discussion course, Senior Seminar. Click here to see Maya Redlinger’s Senior Seminar project, It Don’t Mean A Thing Unless It’s Got That Swing!";
+    var link = "http://www.shcp.edu/academics-2/de-paul-scholar-program/";
+    var msg = "<h2>" + department + "</h2><h3>Our Mission</h3>" + mission + "<br><a style='font-size:20px' href='" + link + "'>Department Home<a/><BR>";
+    $('#room-info').html(msg);
+
 }
 
 function flip() {

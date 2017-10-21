@@ -139,9 +139,14 @@ function setup() {
     flipBtn = createButton("Rotate");
     flipBtn.position(520, 10);
     flipBtn.mouseClicked(flip);
-    flipBtn.parent("floor-plan")
+    flipBtn.parent("floor-plan");
 
-    $('#room-info').html("<h3>More Info</h3>");
+    var department = "Visual & Performing Arts";
+    var mission = "SHC’s Visual & Performing Arts Department asks students to work individually and collaboratively to create projects and performances that express individual gifts and talents while providing service and joy to others. By critically analyzing artistic mediums from a variety of cultures, time periods and movements, students acquire a depth and breadth of understanding about the world around them and within themselves.";
+    var link = "http://www.shcp.edu/department/vpa/";
+    var msg = "<h2>" + department + "</h2><h3>Our Mission</h3>" + mission + "<br><a style='font-size:20px' href='" + link + "'>Department Home<a/><BR>";
+    $('#room-info').html(msg);
+
 }
 
 function flip() {

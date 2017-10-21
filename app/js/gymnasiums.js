@@ -47,9 +47,14 @@ function setup() {
     flipBtn = createButton("Rotate");
     flipBtn.position(520, 10);
     flipBtn.mouseClicked(flip);
-    flipBtn.parent("floor-plan")
+    flipBtn.parent("floor-plan");
 
-    $('#room-info').html("<h3>More Info</h3>");
+    var department = "Athletics";
+    var mission = "We believe that participating in athletics contributes to physical, personal, social and spiritual growth.";
+    var link = "http://www.shcp.edu/athletics-2/";
+    var msg = "<h2>" + department + "</h2><h3>Our Mission</h3>" + mission + "<br><a style='font-size:20px' href='" + link + "'>Department Home<a/><BR>";
+    $('#room-info').html(msg);
+
 }
 
 function flip() {

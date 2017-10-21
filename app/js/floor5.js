@@ -55,9 +55,13 @@ function setup() {
     flipBtn = createButton("Rotate");
     flipBtn.position(520, 10);
     flipBtn.mouseClicked(flip);
-    flipBtn.parent("floor-plan")
+    flipBtn.parent("floor-plan");
 
-    $('#room-info').html("<h3>More Info</h3>");
+    var department = "English";
+    var mission = "Inspired by the literary canon, the SHC English Department teaches students to find their own voice and to develop critical literacy so that they become passionate readers, articulate writers, and lifelong contributors to their communities.";
+    var link = "http://www.shcp.edu/department/english/";
+    var msg = "<h2>" + department + "</h2><h3>Our Mission</h3>" + mission + "<br><a style='font-size:20px' href='" + link + "'>Department Home<a/><BR>";
+    $('#room-info').html(msg);
 }
 
 function flip() {

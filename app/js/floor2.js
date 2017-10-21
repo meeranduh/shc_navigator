@@ -58,7 +58,7 @@ function setup() {
     flipBtn.mouseClicked(flip);
     flipBtn.parent("floor-plan");
 
-    $('#room-info').html("<h3>More Info</h3>");
+    $('#room-info').html("<h2>Science</h2><h3>Our Mission</h3>The mission of the SHC Science Department is to help our students form an appreciation for science and its processes. We aim to teach our students how to use the scientific method as investigative tool, so they can more critically understand modern descriptions of our universe and arrive at objective conclusions about the natural world. We are committed to providing a rigorous, college preparatory curriculum that meets the needs of all students while using innovative and cutting-edge learning activities to challenge them to reach their full potential. SHC science teachers strive to promote in students a basic understanding of the ethical and moral issues within science and provide opportunities for students to apply their scientific knowledge and skills to their community.<br><a style='font-size:20px' href='http://www.shcp.edu/department/science/'>Department Home<a/>");
 }
 
 function flip() {

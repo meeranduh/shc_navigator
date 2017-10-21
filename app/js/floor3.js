@@ -84,7 +84,11 @@ function setup() {
     flipBtn.mouseClicked(flip);
     flipBtn.parent("floor-plan");
 
-    $('#room-info').html("<h3>More Info</h3>");
+    var department = "Service-Learning";
+    var mission = "The students of SHC animate the message of our founders through acts of justice, charity, prayer, community-building and reflection in and out of the classroom. Our service-learning program integrates curriculum-based community outreach and direct service throughout all grade levels. Service-learning develops academically prepared leaders who understand how to be effective agents of change in a complicated world. Through service-learning at SHC, our students critically reflect on the Gospel values of compassion, community and the giving of self. Because Christian service is at the core of SHC’s mission, we do not limit service to a prescribed number of hours.";
+    var link = "http://www.shcp.edu/academics-2/service-learning/";
+    var msg = "<h2>" + department + "</h2><h3>Our Mission</h3>" + mission + "<br><a style='font-size:20px' href='" + link + "'>Department Home<a/><BR>";
+    $('#room-info').html(msg);
 }
 
 function flip() {

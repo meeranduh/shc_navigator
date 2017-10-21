@@ -5,18 +5,18 @@ walls.push(new Wall({ x: 329, y: 56 }, { x: 331, y: 160 }));
 walls.push(new Wall({ x: 273, y: 157 }, { x: 275, y: 186 }));
 
 var rooms = [];
-rooms.push(createRoom(25, 44, 250, 115, "Dining Hall", "#4CAF50", 30, "#ffffff", "test"))
-rooms.push(createRoom(86, 0, 115, 44, "Food Court", "#4CAF50", 13, "#ffffff", "test"))
-rooms.push(createRoom(0, 0, 70, 44, "Teacher's\nCafe", "#4CAF50", 11, "#ffffff", "test"))
-rooms.push(createRoom(432, 0, 73, 41, "Dance\nStudio", "#4CAF50", 11, "#ffffff", "test"))
-rooms.push(createRoom(390, 41, 115, 112, "Fitness\nCenter", "#4CAF50", 20, "#ffffff", "test"))
-rooms.push(createRoom(415, 153, 90, 34, "Locker\nRoom", "#4CAF50", 11, "#ffffff", "test"))
+rooms.push(createRoom(25, 44, 250, 115, "Dining Hall", "#4CAF50", 30, "#ffffff", "test"));
+rooms.push(createRoom(86, 0, 115, 44, "Food Court", "#4CAF50", 13, "#ffffff", "test"));
+rooms.push(createRoom(0, 0, 70, 44, "Teacher's\nCafe", "#4CAF50", 11, "#ffffff", "test"));
+rooms.push(createRoom(432, 0, 73, 41, "Dance\nStudio", "#4CAF50", 11, "#ffffff", "test"));
+rooms.push(createRoom(390, 41, 115, 112, "Fitness\nCenter", "#4CAF50", 20, "#ffffff", "test"));
+rooms.push(createRoom(415, 153, 90, 34, "Locker\nRoom", "#4CAF50", 11, "#ffffff", "test"));
 
-rooms.push(createRoom(201, 0, 74, 44, "", "#005032", 13, "#ffffff"))
-rooms.push(createRoom(70, 0, 16, 44, "", "#005032", 13, "#ffffff"))
-rooms.push(createRoom(0, 44, 25, 115, "", "#005032", 13, "#ffffff"))
-rooms.push(createRoom(409, 0, 23, 41, "", "#005032", 13, "#ffffff"))
-rooms.push(createRoom(356, 143, 35, 18, "", "#005032", 13, "#ffffff"))
+rooms.push(createRoom(201, 0, 74, 44, "", "#005032", 13, "#ffffff"));
+rooms.push(createRoom(70, 0, 16, 44, "", "#005032", 13, "#ffffff"));
+rooms.push(createRoom(0, 44, 25, 115, "", "#005032", 13, "#ffffff"));
+rooms.push(createRoom(409, 0, 23, 41, "", "#005032", 13, "#ffffff"));
+rooms.push(createRoom(356, 143, 35, 18, "", "#005032", 13, "#ffffff"));
 
 rooms.push(createRoom(356, 70, 34, 33, "male_rm", "#5b686d", 15, "#ffffff"));
 rooms.push(createRoom(356, 112, 34, 33, "female_rm", "#5b686d", 15, "#ffffff"));
@@ -68,9 +68,20 @@ function setup() {
     flipBtn = createButton("Rotate");
     flipBtn.position(520, 10);
     flipBtn.mouseClicked(flip);
-    flipBtn.parent("floor-plan")
+    flipBtn.parent("floor-plan");
 
-    $('#room-info').html("<h3>More Info</h3>");
+    var department = "Clubs and Community Life";
+    var mission = "The Student Activities Program empowers students to become service-oriented leaders who aid their communities. The program provides opportunities that reflect student interest, nurture school pride and support the SHC Expected Schoolwide Learning Results (ESLRs), while developing relationships and community across all grade levels.";
+    var link = "http://www.shcp.edu/community-life/clubs-organizations/";
+    var msg = "<h2>" + department + "</h2><h3>Our Mission</h3>" + mission + "<br><a style='font-size:20px' href='" + link + "'>Department Home<a/><BR>";
+
+    department = "Wellness";
+    mission = "The Wellness Curriculum is designed to give students a foundation for healthy living and decision-making both for themselves and their community.";
+    link = "http://www.shcp.edu/department/wellness/";
+    msg += "<h2>" + department + "</h2><h3>Our Mission</h3>" + mission + "<br><a style='font-size:20px' href='" + link + "'>Department Home<a/><BR>";
+
+    $('#room-info').html(msg);
+
 }
 
 function flip() {

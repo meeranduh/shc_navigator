@@ -108,9 +108,21 @@ function setup() {
     flipBtn = createButton("Rotate");
     flipBtn.position(520, 10);
     flipBtn.mouseClicked(flip);
-    flipBtn.parent("floor-plan")
+    flipBtn.parent("floor-plan");
 
-    $('#room-info').html("<h3>More Info</h3>");
+    var department = "Language Other Than English (LOTE)";
+    var mission = "The Languages Other Than English Department seeks to engage students in the global community by developing their abilities to articulate ideas and communicate effectively in American Sign Language, French, Japanese, Mandarin or Spanish. Following the National Standards for Foreign Language Education, LOTE curriculum facilitates the skills of listening, speaking, reading and writing. Students gain experiential knowledge of other cultures, make connections across disciplines, explore the nature of language and culture by comparisons with their own and actively participate in bilingual communities, beginning with the LOTE classroom.";
+    var link = "http://www.shcp.edu/department/lote/";
+    var msg = "<h2>" + department + "</h2><h3>Our Mission</h3>" + mission + "<br><a style='font-size:20px' href='" + link + "'>Department Home<a/><BR>";
+    $('#room-info').html(msg);
+
+
+    department = "Social Studies";
+    mission = "The Social Studies Department encourages students to refine their literacy and critical thinking skills in pursuit of historical and social inquiry. We prepare future citizens to understand global economics; international relations, social customs, and historical trends; and the impact of the United States within the global community. Students develop analytical abilities through writing, research, document analysis, projects, creative interpretations, role-playing and discussion. We learn collaboratively and cooperatively in an environment of respect and dignity, stimulating intellectual curiosity about the world, and expanding appreciation and respect for diverse cultures and religions.";
+    link = "http://www.shcp.edu/department/social-studies/";
+    msg += "<h2>" + department + "</h2><h3>Our Mission</h3>" + mission + "<br><a style='font-size:20px' href='" + link + "'>Department Home<a/><BR>";
+    $('#room-info').html(msg);
+
 }
 
 function flip() {

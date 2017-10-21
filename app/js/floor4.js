@@ -54,9 +54,19 @@ function setup() {
     flipBtn = createButton("Rotate");
     flipBtn.position(520, 10);
     flipBtn.mouseClicked(flip);
-    flipBtn.parent("floor-plan")
+    flipBtn.parent("floor-plan");
 
-    $('#room-info').html("<h3>More Info</h3>");
+    var department = "I2 Program";
+    var mission = "The Inquiry & Innovation (I2) program is a rigorous four-year program designed to expand the unique talents and interests of its students through science, technology, engineering, mathematics, design and service. ";
+    var link = "http://www.shcp.edu/academics-2/i2-program/";
+    var msg = "<h2>" + department + "</h2><h3>Our Mission</h3>" + mission + "<br><a style='font-size:20px' href='" + link + "'>Department Home<a/><BR>";
+
+    department = "Mathematics";
+    mission = "The mission of the SHC Mathematics Department is to help our students appreciate math and its practices and to develop their individual reasoning abilities. We are committed to providing a rigorous, college preparatory curriculum that meets the needs of all students, through innovative learning activities, real world applications and connections across disciplines. We aim to teach our students how to use diverse mathematical methods, so they can more critically understand the world of mathematics and arrive at objective conclusions about the problems presented to them.";
+    link = "http://www.shcp.edu/department/math/";
+    msg += "<h2>" + department + "</h2><h3>Our Mission</h3>" + mission + "<br><a style='font-size:20px' href='" + link + "'>Department Home<a/><BR>";
+
+    $('#room-info').html(msg);
 }
 
 function flip() {
