@@ -7,7 +7,10 @@ https://www.npmjs.com/get-npm
 
 
 Install rimraf
-> npm install rimraf
+> npm install -g rimraf
+
+Install gulp
+> npm install -g gulp
 
 Run npm install to setup all the necessary libraries
 > npm install
