@@ -16,8 +16,8 @@ rooms.push(createRoom(280, 0, 70, 70, "511", "#69b342", 25, "#ffffff"));
 rooms.push(createRoom(350, 0, 35, 70, "male_rm", "#5b686d", 15, "#ffffff"));
 rooms.push(createRoom(385, 0, 35, 70, "female_rm", "#5b686d", 15, "#ffffff"));
 
-rooms.push(createRoom(0, 59, 42, 30, "", "#69b342", 25, "#ffffff"));
-rooms.push(createRoom(0, 90, 42, 30, "", "#69b342", 25, "#ffffff"));
+rooms.push(createRoom(0, 59, 42, 30, "", "#005032", 25, "#ffffff"));
+rooms.push(createRoom(0, 90, 42, 30, "", "#005032", 25, "#ffffff"));
 
 rooms.push(createRoom(420, 42, 20, 18, "e", "#005b7d", 15, "#ffffff"));
 rooms.push(createRoom(440, 42, 20, 18, "e", "#005b7d", 15, "#ffffff"));
