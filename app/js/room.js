@@ -44,8 +44,8 @@ function Room(coordinatons, label, color, tsize, tcolor, events) {
                     fill("#000000");
                     stroke("#000000");
                 } else {
-                    fill("#ffffff");
-                    stroke("#ffffff");
+                    fill(this.tcolor);
+                    stroke(this.tcolor);
                 }
                 textSize(tsize);
                 var widthAdj = label.length >= 3 ? 3.5 : 7;

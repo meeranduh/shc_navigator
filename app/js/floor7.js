@@ -12,6 +12,9 @@ walls.push(new Wall({x:154, y:20}, {x:156, y:35}));
 walls.push(new Wall({x:350, y:20}, {x:352, y:35}));
 walls.push(new Wall({x:119, y:20}, {x:121, y:35}));
 
+var labels = [];
+labels.push(new Label({ x: 220, y: 290 }, "DePaul\nFoyer", 14, "#000000"));
+
 var rooms = [];
 rooms.push(createRoom(56, 86, 65, 56, "701", "#69b342", 20, "#ffffff"));
 rooms.push(createRoom(56, 142, 65, 63, "702", "#69b342", 20, "#ffffff"));
@@ -19,8 +22,7 @@ rooms.push(createRoom(391, 30, 58, 56, "Tech\nShop", "#69b342", 15, "#ffffff"));
 rooms.push(createRoom(391, 86, 58, 37, "705", "#69b342", 20, "#ffffff"));
 rooms.push(createRoom(391, 123, 58, 82, "Art\nRoom", "#69b342", 15, "#ffffff"));
 rooms.push(createRoom(337, 258, 143, 62, "Chorus\nRoom", "#69b342", 15, "#ffffff"));
-rooms.push(createRoom(172, 258, 165, 49, "DePaul\nFoyer", "#5b686d", 15, "#69b342"));
-rooms.push(createRoom(189, 35, 130, 55, "Stage", "#608cd1", 15, "#69b342"));
+rooms.push(createRoom(189, 35, 130, 55, "Stage", "#608cd1", 15, "#ffffff"));
 
 rooms.push(createRoom(56, 30, 65, 56, "", "#005032", 20, "#ffffff"));
 rooms.push(createRoom(121, 186, 52, 19, "", "#005032", 20, "#ffffff"));
@@ -163,6 +165,10 @@ function draw() {
 
     stairs.forEach(function(stair) {
         stair.display(flipDirection);
+    });
+    
+    labels.forEach(function(label) {
+        label.display(flipDirection);
     });
 }
 
