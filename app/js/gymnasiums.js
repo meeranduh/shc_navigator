@@ -1,19 +1,19 @@
 var walls = [];
-walls.push(new Wall({x: 250, y:30}, {x: 306, y: 32}));
-walls.push(new Wall({x: 250, y:150}, {x: 301, y: 152}));
-walls.push(new Wall({x: 248, y:136}, {x: 250, y: 186}));
-walls.push(new Wall({x: 299, y:110}, {x: 301, y: 186}));
-walls.push(new Wall({x: 329, y:110}, {x: 331, y: 161}));
-walls.push(new Wall({x: 329, y:150}, {x: 356, y: 152}));
-walls.push(new Wall({x: 357, y:136}, {x: 359, y: 186}));
+walls.push(new Wall({ x: 250, y: 30 }, { x: 306, y: 32 }));
+walls.push(new Wall({ x: 250, y: 150 }, { x: 301, y: 152 }));
+walls.push(new Wall({ x: 248, y: 136 }, { x: 250, y: 186 }));
+walls.push(new Wall({ x: 299, y: 110 }, { x: 301, y: 186 }));
+walls.push(new Wall({ x: 329, y: 110 }, { x: 331, y: 161 }));
+walls.push(new Wall({ x: 329, y: 150 }, { x: 356, y: 152 }));
+walls.push(new Wall({ x: 357, y: 136 }, { x: 359, y: 186 }));
 
 var rooms = [];
-rooms.push(createRoom(0, 0, 250, 138, "Pavilion", "#4CAF50", 40, "#000000", "test"));
-rooms.push(createRoom(356, 0, 200, 138, "Old\nGym", "#4CAF50", 30, "#000000", "test"));
+rooms.push(createRoom(0, 0, 250, 138, "Pavilion", "#4CAF50", 40, "#ffffff", "test"));
+rooms.push(createRoom(356, 0, 200, 138, "Old\nGym", "#4CAF50", 30, "#ffffff", "test"));
 
-rooms.push(createRoom(220, 65, 30, 30, "store", "#005032", 10, "#000000", "test"));
+rooms.push(createRoom(220, 65, 30, 30, "store", "#005032", 10, "#ffffff", "test"));
 
-rooms.push(createRoom(306, 16, 21, 17, "e", "#005b7d", 15, "#000000"));
+rooms.push(createRoom(306, 16, 21, 17, "e", "#005b7d", 15, "#ffffff"));
 
 var stairs = [];
 stairs.push(new Steps(301, 141, 28, 19, 'horizontal', 5, "#969696", "#F1F8E9"));

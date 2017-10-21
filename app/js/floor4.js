@@ -1,24 +1,24 @@
 var rooms = [];
 var walls = [];
-rooms.push(createRoom(0, 120, 90, 70, "406", "#69b342", 25, "#000000"));
-rooms.push(createRoom(90, 120, 90, 70, "405", "#69b342", 25, "#000000"));
-rooms.push(createRoom(180, 120, 90, 70, "404", "#69b342", 25, "#000000"));
-rooms.push(createRoom(270, 120, 90, 70, "403", "#69b342", 25, "#000000"));
-rooms.push(createRoom(350, 120, 70, 70, "402", "#69b342", 25, "#000000"));
-rooms.push(createRoom(420, 120, 70, 70, "401", "#69b342", 25, "#000000"));
-rooms.push(createRoom(70, 0, 70, 70, "408", "#69b342", 25, "#000000"));
-rooms.push(createRoom(140, 0, 70, 70, "409", "#69b342", 25, "#000000"));
-rooms.push(createRoom(210, 0, 70, 70, "410", "#69b342", 25, "#000000"));
-rooms.push(createRoom(280, 0, 70, 70, "411", "#69b342", 25, "#000000"));
+rooms.push(createRoom(0, 120, 90, 70, "406", "#69b342", 25, "#ffffff", "<img class='photo' src='assets/classrooms/pictures/406.JPG' alt='406'>"));
+rooms.push(createRoom(90, 120, 90, 70, "405", "#69b342", 25, "#ffffff", "<img class='photo' src='assets/classrooms/pictures/405.JPG' alt='405'>"));
+rooms.push(createRoom(180, 120, 90, 70, "404", "#69b342", 25, "#ffffff", "<img class='photo' src='assets/classrooms/pictures/404.JPG' alt='404'>"));
+rooms.push(createRoom(270, 120, 90, 70, "403", "#69b342", 25, "#ffffff", "<img class='photo' src='assets/classrooms/pictures/403.JPG' alt='403'>"));
+rooms.push(createRoom(350, 120, 70, 70, "402", "#69b342", 25, "#ffffff", "<img class='photo' src='assets/classrooms/pictures/402.JPG' alt='402'>"));
+rooms.push(createRoom(420, 120, 70, 70, "401", "#69b342", 25, "#ffffff", "<img class='photo' src='assets/classrooms/pictures/401.JPG' alt='401'>"));
+rooms.push(createRoom(70, 0, 70, 70, "408", "#69b342", 25, "#ffffff"));
+rooms.push(createRoom(140, 0, 70, 70, "409", "#69b342", 25, "#ffffff", "<img class='photo' src='assets/classrooms/pictures/409.JPG' alt='409'>"));
+rooms.push(createRoom(210, 0, 70, 70, "410", "#69b342", 25, "#ffffff", "<img class='photo' src='assets/classrooms/pictures/410(1).JPG' alt='410'>"));
+rooms.push(createRoom(280, 0, 70, 70, "411", "#69b342", 25, "#ffffff", "<img class='photo' src='assets/classrooms/pictures/411.JPG' alt='411'>"));
 
 rooms.push(createRoom(350, 0, 35, 70, "female_rm", "#5b686d", 15, "#ffffff"));
 rooms.push(createRoom(385, 0, 35, 70, "male_rm", "#5b686d", 15, "#ffffff"));
 
-rooms.push(createRoom(0, 59, 42, 30, "", "#69b342", 25, "#000000"));
-rooms.push(createRoom(0, 90, 42, 30, "", "#69b342", 25, "#000000"));
+rooms.push(createRoom(0, 59, 42, 30, "", "#69b342", 25, "#ffffff"));
+rooms.push(createRoom(0, 90, 42, 30, "", "#69b342", 25, "#ffffff"));
 
-rooms.push(createRoom(420, 42, 20, 18, "e", "#005b7d", 15, "#000000"));
-rooms.push(createRoom(440, 42, 20, 18, "e", "#005b7d", 15, "#000000"));
+rooms.push(createRoom(420, 42, 20, 18, "e", "#005b7d", 15, "#ffffff"));
+rooms.push(createRoom(440, 42, 20, 18, "e", "#005b7d", 15, "#ffffff"));
 
 var stairs = [];
 stairs.push(new Stair(420, 0, 42, 42, 1, 3, 'vertical', 5, "#969696", "#F1F8E9"));

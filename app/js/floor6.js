@@ -7,7 +7,7 @@ labels.push(new Label({ x: 229, y: 185 }, "Veranda", 14, "#000000"));
 var rooms = [];
 rooms.push(createRoom(42, 0, 235, 160, "Library", "#69b342", 36, "#ffffff", "<ul><li>College Advising</li><li>De Paul Scholar Program</li></ul>"));
 rooms.push(createRoom(406, 89, 84, 101, "Chapel", "#69b342", 15, "#ffffff"));
-// rooms.push(createRoom(329, 158, 70, 25, "Veranda", "#ffffff", 10, "#000000"));
+// rooms.push(createRoom(329, 158, 70, 25, "Veranda", "#ffffff", 10, "#ffffff"));
 
 rooms.push(createRoom(420, 40, 25, 20, "e", "#005b7d", 15, "#ffffff"));
 rooms.push(createRoom(445, 40, 25, 20, "e", "#005b7d", 15, "#ffffff"));
@@ -15,8 +15,8 @@ rooms.push(createRoom(445, 40, 25, 20, "e", "#005b7d", 15, "#ffffff"));
 rooms.push(createRoom(365, 0, 55, 35, "male_rm", "#5b686d", 15, "#ffffff"));
 rooms.push(createRoom(365, 35, 35, 38, "female_rm", "#5b686d", 15, "#ffffff"));
 
-rooms.push(createRoom(0, 87, 42, 70, "", "#005032", 15, "#000000"));
-rooms.push(createRoom(352, 89, 35, 40, "", "#005032", 15, "#000000"));
+rooms.push(createRoom(0, 87, 42, 70, "", "#005032", 15, "#ffffff"));
+rooms.push(createRoom(352, 89, 35, 40, "", "#005032", 15, "#ffffff"));
 rooms.push(new Room([{ x: 276, y: 0 },
     { x: 365, y: 0 },
     { x: 365, y: 73 },
@@ -27,7 +27,7 @@ rooms.push(new Room([{ x: 276, y: 0 },
     { x: 291, y: 41 },
     { x: 281, y: 46 },
     { x: 276, y: 41 }
-], "", "#005032", 15, "#000000"));
+], "", "#005032", 15, "#ffffff"));
 
 rooms.push(new Room([{ x: 283, y: 113 },
     { x: 294, y: 108 },
@@ -35,7 +35,7 @@ rooms.push(new Room([{ x: 283, y: 113 },
     { x: 313, y: 150 },
     { x: 276, y: 150 },
     { x: 276, y: 121 }
-], "", "#005032", 15, "#000000"));
+], "", "#005032", 15, "#ffffff"));
 
 rooms.push(new Room([{ x: 314, y: 109 },
     { x: 320, y: 105 },
@@ -44,7 +44,7 @@ rooms.push(new Room([{ x: 314, y: 109 },
     { x: 352, y: 89 },
     { x: 352, y: 137 },
     { x: 314, y: 137 }
-], "", "#005032", 15, "#000000"));
+], "", "#005032", 15, "#ffffff"));
 
 var stairs = [];
 stairs.push(new Stair(420, 0, 42, 40, 1, 3, 'vertical', 5, "#969696", "#F1F8E9"));
