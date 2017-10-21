@@ -1,283 +1,287 @@
 <html>
 
 <head>
-    <title>SHC navigator</title>
-    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="./node_modules/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
-    <script src="./node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
-    <script src="./node_modules/p5/lib/p5.min.js" type="text/javascript"></script>
-    <script src="./node_modules/p5/lib/addons/p5.dom.min.js" type="text/javascript"></script>
-    <script src="./node_modules/p5/lib/addons/p5.sound.min.js" type="text/javascript"></script>
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="./app/js/irish.js" type="text/javascript"></script>
-    <script src="./app/js/background.js" type="text/javascript"></script>
-    <style>
-        .main {
-            opacity: 0.8;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            padding-left: 5px;
-            padding-right: 5px;
-        }
-        
-        .fightingIrish {
-            opacity: 0.8;
-            position: absolute;
-            left: 0;
-            top: 0;
-            z-index: -1;
-        }
-        
-        .title {
-            font-size: 24px;
-        }
-        
-        .floor {
-            font-size: 20px;
-            padding-top: 5px;
-            padding-bottom: 5px
-        }
-        
-        .cell {
-            padding-top: 5px;
-            padding-bottom: 5px;
-            padding-left: 8px;
-            padding-right: 5px;
-        }
-        
-        .logo_cell {
-            /* border-width: 1px;
+<title>SHC navigator</title>
+<link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="./node_modules/font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
+<script src="./node_modules/jquery/dist/jquery.min.js" type="text/javascript"></script>
+<script src="./node_modules/p5/lib/p5.min.js" type="text/javascript"></script>
+<script src="./node_modules/p5/lib/addons/p5.dom.min.js" type="text/javascript"></script>
+<script src="./node_modules/p5/lib/addons/p5.sound.min.js" type="text/javascript"></script>
+<script src="./node_modules/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="./app/js/irish.js" type="text/javascript"></script>
+<script src="./app/js/background.js" type="text/javascript"></script>
+<style>
+.main {
+	opacity: 0.8;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.fightingIrish {
+	opacity: 0.8;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: -1;
+}
+
+.title {
+	font-size: 24px;
+}
+
+.floor {
+	font-size: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px
+}
+
+.cell {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 8px;
+	padding-right: 5px;
+}
+
+.logo_cell {
+	/* border-width: 1px;
             border-style: solid;
             border-color: black; */
-            text-align: center;
-            padding-top: 5px;
-            padding-bottom: 5px;
-            padding-left: 8px;
-            padding-right: 5px;
-        }
-        
-        .logo {
-            height: 30%;
-            width: 100%;
-            max-width: 300px;
-        }
-        
-        .fullmap {
-            height: 40%;
-            width: 100%;
-            max-width: 400px;
-        }
-        
-        .lasalle_map {
-            height: 100%;
-            width: 100%;
-            max-width: 400px;
-        }
-        
-        .lasalle_map_cell {
-            /* background-color: #F0F4C3; */
-            height: 35%;
-            margin-bottom: 0px;
-            text-align: center;
-        }
-        
-        .lasalle {
-            /* background-color: #F0F4C3; */
-            /* height: 65%; */
-            margin-bottom: 0px;
-        }
-        
-        .depaul_map {
-            height: 100%;
-            width: 100%;
-            max-width: 400px;
-        }
-        
-        .depaul_map_cell {
-            /* background-color: #DCEDC8; */
-            height: 35%;
-            margin-bottom: 0px;
-            text-align: center;
-        }
-        
-        .depaul {
-            /* background-color: #DCEDC8; */
-            /* height: 65%; */
-            margin-bottom: 0px;
-        }
-    </style>
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 8px;
+	padding-right: 5px;
+}
+
+.logo {
+	height: 30%;
+	width: 100%;
+	max-width: 300px;
+}
+
+.fullmap {
+	height: 40%;
+	width: 100%;
+	max-width: 400px;
+}
+
+.lasalle_map {
+	height: 100%;
+	width: 100%;
+	max-width: 400px;
+}
+
+.lasalle_map_cell {
+	/* background-color: #F0F4C3; */
+	height: 35%;
+	margin-bottom: 0px;
+	text-align: center;
+}
+
+.lasalle {
+	/* background-color: #F0F4C3; */
+	/* height: 65%; */
+	margin-bottom: 0px;
+}
+
+.depaul_map {
+	height: 100%;
+	width: 100%;
+	max-width: 400px;
+}
+
+.depaul_map_cell {
+	/* background-color: #DCEDC8; */
+	height: 35%;
+	margin-bottom: 0px;
+	text-align: center;
+}
+
+.depaul {
+	/* background-color: #DCEDC8; */
+	/* height: 65%; */
+	margin-bottom: 0px;
+}
+</style>
 </head>
 
 <body>
-    <div id="BG" class="fightingIrish"></div>
-    <div class="container main">
-        <div class="row">
-            <div class="col-sm-4 logo_cell">
-                <img class="logo" src="./assets/SHC.PNG" alt="SHC">
-            </div>
-            <div class="col-sm-4 logo_cell">
-                <H3>
-                    <BR> Welcome to the
-                    <BR> SHC Open House
-                    <BR> 10/21/2017
-                </H3>
-            </div>
-            <div class="col-sm-4 ">
-                <img class="logo" src="./assets/shc_full_map.png" alt="SHC Map">
-            </div>
-        </div>
+	<div id="BG" class="fightingIrish"></div>
+	<div class="container main">
+		<div class="row">
+			<div class="col-sm-4 logo_cell">
+				<img class="logo" src="./assets/SHC.PNG" alt="SHC">
+			</div>
+			<div class="col-sm-4 logo_cell">
+				<H3>
+					<BR> Welcome to the <BR> SHC Open House <BR> 10/21/2017
+				</H3>
+			</div>
+			<div class="col-sm-4 ">
+				<img class="logo" src="./assets/shc_full_map.png" alt="SHC Map">
+			</div>
+		</div>
 
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="cell depaul_map_cell">
-                    <img class="depaul_map" src="./assets/DePaul_Campus.png" alt="DePaul">
-                </div>
-                <div class="panel panel-default cell depaul">
-                    <div class="panel-heading title">De Paul Campus for the Arts</div>
-                    <div class="panel-body>">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Floor</th>
-                                    <th>Department &amp; Exhibits</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th><a class="list-group-item list-group-item-action floor" href="../floor8.html">8th Floor</a></th>
-                                    <th>
-                                    	<ul>
-                                   			<li> Languages Other Than English (LOTE)
-                                   			<li> Social Studies
-                                    	</ul>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th><a class="list-group-item list-group-item-action floor" href="../floor7.html">7th Floor</a></th>
-                                    <th>
-                                    	<ul>
-                                   			<li> Visual Arts
-                                   			<li> Dance Program
-                                   			<li> Instrumental Music
-                                    	</ul>                                                                     
-                                    </th>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="cell lasalle_map_cell">
-                    <img class="lasalle_map" src="./assets/LaSalle_Campus.png" alt="DePaul">
-                </div>
-                <div class="panel panel-default cell lasalle">
-                    <div class="panel-heading title">Student Life Center</div>
-                    <div class="panel-body>">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Floor</th>
-                                    <th>Department &amp; Exhibits</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th><a class="list-group-item list-group-item-action floor" href="../gymnasiums.html">2nd Floor - Gymnasiums</a></th>
-                                    <th>
-                                    	<ul>
-                                    		<li> Atheletics
-                                    	</ul>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th><a class="list-group-item list-group-item-action floor" href="../plaza.html">1st Floor - Plaza Level</a></th>
-                                    <th>
-                                        <ul>
-                                            <li> Clubs and Community Life 
-                                            <li> Irish Prep Shop
-                                            <li> Parents Association
-                                            <li> Wellness
-                                            <li> Dining Hall
-                                        </ul>
-                                    </th>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="cell depaul_map_cell">
+					<img class="depaul_map" src="./assets/DePaul_Campus.png" alt="DePaul">
+				</div>
+				<div class="panel panel-default cell depaul">
+					<div class="panel-heading title">De Paul Campus for the Arts</div>
+					<div class="panel-body>">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>Floor</th>
+									<th>Department &amp; Exhibits</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th><a class="list-group-item list-group-item-action floor" href="../floor8.html">8th Floor</a></th>
+									<th>
+										<ul>
+											<li>Languages Other Than English (LOTE)
+											<li>Social Studies
+										</ul>
+									</th>
+								</tr>
+								<tr>
+									<th><a class="list-group-item list-group-item-action floor" href="../floor7.html">7th Floor</a></th>
+									<th>
+										<ul>
+											<li>Visual Arts
+											<li>Dance Program
+											<li>Instrumental Music
+										</ul>
+									</th>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div>
+					<object data="http://www.youtube.com/embed/W7qWa52k-nE" width="560" height="315"></object>
+				</div>
+			</div>
+			<div class="col-sm-6">
+				<div class="cell lasalle_map_cell">
+					<img class="lasalle_map" src="./assets/LaSalle_Campus.png" alt="DePaul">
+				</div>
+				<div class="panel panel-default cell lasalle">
+					<div class="panel-heading title">Student Life Center</div>
+					<div class="panel-body>">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>Floor</th>
+									<th>Department &amp; Exhibits</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th><a class="list-group-item list-group-item-action floor" href="../gymnasiums.html">2nd Floor -
+											Gymnasiums</a></th>
+									<th>
+										<ul>
+											<li>Atheletics
+										</ul>
+									</th>
+								</tr>
+								<tr>
+									<th><a class="list-group-item list-group-item-action floor" href="../plaza.html">1st Floor - Plaza
+											Level</a></th>
+									<th>
+										<ul>
+											<li>Clubs and Community Life
+											<li>Irish Prep Shop
+											<li>Parents Association
+											<li>Wellness
+											<li>Dining Hall
+										</ul>
+									</th>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
 
-                <div class="panel panel-default cell lasalle">
-                    <div class="panel-heading title">La Salle Academic Building</div>
-                    <div class="panel-body>">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Floor</th>
-                                    <th>Department &amp; Exhibits</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th><a class="list-group-item list-group-item-action floor" href="../floor6.html">6th Floor - Library</a></th>
-                                    <th>
-                                    	<ul>
-                                    		<li> College Advising
-                                  		 	<li> De Paul Scholar Program
-                                  	  	</ul>
-                                  	</th>
-                                </tr>
-                                <tr>
-                                    <th> <a class="list-group-item list-group-item-action floor" href="../floor5.html">5th Floor</a></th>
-                                    <th>
-                                    	<ul>
-                                    		<li> English
-                                  	  	</ul>                                    
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th><a class="list-group-item list-group-item-action floor" href="../floor4.html">4th Floor</a></th>
-                                    <th>
-                                    	<ul>
-                                    		<li> Inquiry and Innovation Program
-                                  		 	<li> Mathematics
-                                  	  	</ul>                                    
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th><a class="list-group-item list-group-item-action floor" href="../floor3.html">3rd Floor - Ground Floor</a></th>
-                                    <th>
-                                    	<ul>
-                                    		<li> Academic Resources
-                                  		 	<li> Service Learning
-                                  		 	<li> Community Learning Partnerships
-                                  	  	</ul>
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th><a class="list-group-item list-group-item-action floor" href="../floor2.html">2nd Floor</a></th>
-                                    <th>
-                                    	<ul>
-                                    		<li> Science
-                                  	  	</ul>                                    
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <th><a class="list-group-item list-group-item-action floor" href="../floor1.html">1st Floor</a></th>
-                                    <th>
-                                    	<ul>
-                                    		<li> Counseling
-                                  		 	<li> Religious Studies
-                                  	  	</ul>                                    
-                                    </th>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+				<div class="panel panel-default cell lasalle">
+					<div class="panel-heading title">La Salle Academic Building</div>
+					<div class="panel-body>">
+						<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>Floor</th>
+									<th>Department &amp; Exhibits</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th><a class="list-group-item list-group-item-action floor" href="../floor6.html">6th Floor - Library</a></th>
+									<th>
+										<ul>
+											<li>College Advising
+											<li>De Paul Scholar Program
+										</ul>
+									</th>
+								</tr>
+								<tr>
+									<th><a class="list-group-item list-group-item-action floor" href="../floor5.html">5th Floor</a></th>
+									<th>
+										<ul>
+											<li>English
+										</ul>
+									</th>
+								</tr>
+								<tr>
+									<th><a class="list-group-item list-group-item-action floor" href="../floor4.html">4th Floor</a></th>
+									<th>
+										<ul>
+											<li>Inquiry and Innovation Program
+											<li>Mathematics
+										</ul>
+									</th>
+								</tr>
+								<tr>
+									<th><a class="list-group-item list-group-item-action floor" href="../floor3.html">3rd Floor - Ground
+											Floor</a></th>
+									<th>
+										<ul>
+											<li>Academic Resources
+											<li>Service Learning
+											<li>Community Learning Partnerships
+										</ul>
+									</th>
+								</tr>
+								<tr>
+									<th><a class="list-group-item list-group-item-action floor" href="../floor2.html">2nd Floor</a></th>
+									<th>
+										<ul>
+											<li>Science
+										</ul>
+									</th>
+								</tr>
+								<tr>
+									<th><a class="list-group-item list-group-item-action floor" href="../floor1.html">1st Floor</a></th>
+									<th>
+										<ul>
+											<li>Counseling
+											<li>Religious Studies
+										</ul>
+									</th>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>
